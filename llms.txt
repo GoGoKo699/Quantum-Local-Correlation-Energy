@@ -1,0 +1,29 @@
+# Quantum Local Correlation Energy
+
+> An explicit quantum compiler for a nonuniform discrete-Poisson LCCSD energy density, with full preparation/execution/output accounting and a matched classical variational countercheck.
+
+## Canonical reading order
+
+- [Overview](science/overview.md): supported proposition and scientific scope.
+- [Model and task](science/model-and-task.md): finite input, stationary reference, SD Hermiticity and error contract.
+- [Coulomb access](science/coulomb-access.md): neutral projector and controlled Green-column overlaps.
+- [SD compiler](science/singles-doubles-compiler.md): direct/exchange decomposition and rank-changing incidence.
+- [Gap and signal](science/gap-and-signal.md): actual inverse gap and nonzero requested output.
+- [Scalar estimation](science/scalar-estimation.md): source, selected products, QSVT and finite Neumann route.
+- [Resources](science/resources-and-regimes.md): arithmetic, precision, confidence and logical budgets.
+- [Classical comparison](science/classical-comparison.md): exact FFT MP2, full-residual variational method and observed numerical results.
+- [Related work](references/related-work.md): inherited methods, closest work and comparison limits.
+- [Verification](verification/README.md): scripts, dependencies, outputs and validation scope.
+
+## Interpretation boundaries
+
+- No practical quantum advantage is demonstrated for the worked parameter family.
+- Constant normalization depends on the stated finite model and charged procedural input access.
+- The full Coulomb convolution is not encoded at constant normalization; the charged operator is diagonal on retained position labels.
+- Intermediate success projectors are essential; multiplying complete preparation unitaries can encode the wrong operator.
+- Physical contraction q and circuit normalization beta have different roles.
+- Numerical residual bounds use double precision, not interval-certified arithmetic.
+- Analytical gate budgets are not compiled hardware counts or physical runtime predictions.
+- LCCSD accuracy within this effective model is separate from exact material accuracy.
+- The SD identity does not automatically extend to LCCSDT.
+- The repository makes no absolute priority claim.

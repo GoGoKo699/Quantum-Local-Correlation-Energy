@@ -1,0 +1,78 @@
+{
+  "status": "passed_mathematical_primitive_and_budget_checks_not_full_circuit_simulation",
+  "shell_checks": [
+    {
+      "L": 4,
+      "reference_success_norm_squared": 0.65625,
+      "maximum_shell_correction_squared": 0.5000000000000001,
+      "maximum_relative_amplitude_squared_identity_error": 0.0,
+      "Green_half_success_norm_squared": 0.09876302083333331
+    },
+    {
+      "L": 8,
+      "reference_success_norm_squared": 0.765625,
+      "maximum_shell_correction_squared": 0.5000000000000001,
+      "maximum_relative_amplitude_squared_identity_error": 0.0,
+      "Green_half_success_norm_squared": 0.1123028126951386
+    },
+    {
+      "L": 16,
+      "reference_success_norm_squared": 0.8203125,
+      "maximum_shell_correction_squared": 0.5000000000000001,
+      "maximum_relative_amplitude_squared_identity_error": 0.0,
+      "Green_half_success_norm_squared": 0.11931515930250845
+    }
+  ],
+  "fixed_point_cosine_checks": [
+    {
+      "L": 8,
+      "amplitude_bits": 8,
+      "tested_modes": 8,
+      "cosine_absolute_error_certified_on_tested_modes": 4.915096107893649e-13,
+      "required_uniform_cosine_error": 2.3283064365386963e-10,
+      "scope": "Rational enclosures on tested modes; general uniform proof is in the note"
+    },
+    {
+      "L": 16,
+      "amplitude_bits": 26,
+      "tested_modes": 16,
+      "cosine_absolute_error_certified_on_tested_modes": 1.0565212131472748e-24,
+      "required_uniform_cosine_error": 8.470329472543003e-22,
+      "scope": "Rational enclosures on tested modes; general uniform proof is in the note"
+    },
+    {
+      "L": 256,
+      "amplitude_bits": 26,
+      "tested_modes": 8,
+      "cosine_absolute_error_certified_on_tested_modes": 2.8330595111911457e-27,
+      "required_uniform_cosine_error": 3.308722450212111e-24,
+      "scope": "Rational enclosures on tested modes; general uniform proof is in the note"
+    }
+  ],
+  "comparator_check": {
+    "bits": 8,
+    "maximum_amplitude_error": 0.0011620962155614034,
+    "bound": 0.00390625,
+    "convention": "strict squared predicate yields ceil, with zero endpoint handled exactly"
+  },
+  "budget_checks": [
+    {
+      "epsilon": 5.698089085861593e-09,
+      "total_error_bound": 4.0526555423091544e-09,
+      "failure_bound": 0.0088744693825435,
+      "degree": 11
+    },
+    {
+      "epsilon": 1e-08,
+      "total_error_bound": 6.807845705899071e-09,
+      "failure_bound": 0.0088744693825435,
+      "degree": 11
+    },
+    {
+      "epsilon": 1e-10,
+      "total_error_bound": 7.569441699015867e-11,
+      "failure_bound": 0.0088744693825435,
+      "degree": 15
+    }
+  ]
+}

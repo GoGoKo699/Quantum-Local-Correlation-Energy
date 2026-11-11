@@ -1,0 +1,396 @@
+{
+  "schema_version": "1.0",
+  "title": "Quantum Local Correlation Energy: primary-source bibliography",
+  "review_date": "2026-11-11",
+  "scope": "Sources supporting inherited quantum ingredients, classical comparators, and the stated contribution boundary. No absolute priority claim.",
+  "references": [
+    {
+      "number": 1,
+      "id": "chen_chan_2026_framework",
+      "authors": [
+        "Jielun Chen",
+        "Garnet Kin-Lic Chan"
+      ],
+      "title": "Framework for robust quantum speedups in practical correlated electronic structure and dynamics",
+      "year": 2026,
+      "venue": "Physical Review Letters",
+      "volume": "137",
+      "article": "130601",
+      "doi": "10.1103/v2ms-wmz1",
+      "arxiv": "2508.15765v2",
+      "version_date": "2026-09-22",
+      "primary_urls": [
+        "https://arxiv.org/abs/2508.15765v2",
+        "https://arxiv.org/pdf/2508.15765",
+        "https://doi.org/10.1103/v2ms-wmz1"
+      ],
+      "coverage": {
+        "status": "full_text_checked",
+        "locations": [
+          "Main LCC discussion",
+          "Supplement equation (13)",
+          "Supplement data-access discussion and Table II"
+        ]
+      },
+      "role": "Existing LCC quantum task and explicitly charged sparse/envelope baseline; not a lower bound."
+    },
+    {
+      "number": 2,
+      "id": "chen_sun_chan_2026_bse",
+      "authors": [
+        "Jielun Chen",
+        "Jiace Sun",
+        "Garnet Kin-Lic Chan"
+      ],
+      "title": "Quasiparticle quantum simulation of materials with the Bethe–Salpeter equation",
+      "year": 2026,
+      "venue": "arXiv",
+      "arxiv": "2610.02916v1",
+      "primary_urls": [
+        "https://arxiv.org/abs/2610.02916v1",
+        "https://arxiv.org/pdf/2610.02916"
+      ],
+      "coverage": {
+        "status": "full_text_checked",
+        "locations": [
+          "Main compiler decomposition",
+          "Appendix C",
+          "Appendix D"
+        ]
+      },
+      "role": "Prior constant fixed-rank norms and localized-THC primitive normalizations."
+    },
+    {
+      "number": 3,
+      "id": "gilyen_su_low_wiebe_2019_qsvt",
+      "authors": [
+        "András Gilyén",
+        "Yuan Su",
+        "Guang Hao Low",
+        "Nathan Wiebe"
+      ],
+      "title": "Quantum singular value transformation and beyond: exponential improvements for quantum matrix arithmetics",
+      "year": 2019,
+      "preprint_year": 2018,
+      "venue": "Proceedings of the 51st Annual ACM SIGACT Symposium on Theory of Computing",
+      "pages": "193–204",
+      "doi": "10.1145/3313276.3316366",
+      "arxiv": "1806.01838v1",
+      "primary_urls": [
+        "https://arxiv.org/abs/1806.01838v1",
+        "https://arxiv.org/pdf/1806.01838",
+        "https://doi.org/10.1145/3313276.3316366"
+      ],
+      "coverage": {
+        "status": "selected_full_text_checked",
+        "locations": [
+          "Section 3.7, Theorem 41",
+          "Sections 4.3–4.4, Lemmas 52–53"
+        ]
+      },
+      "role": "Inherited inverse approximation, LCU, and projected-product rules."
+    },
+    {
+      "number": 4,
+      "id": "brassard_hoyer_mosca_tapp_2002_ae",
+      "authors": [
+        "Gilles Brassard",
+        "Peter Høyer",
+        "Michele Mosca",
+        "Alain Tapp"
+      ],
+      "title": "Quantum Amplitude Amplification and Estimation",
+      "year": 2002,
+      "preprint_year": 2000,
+      "venue": "Contemporary Mathematics",
+      "volume": "305",
+      "pages": "53–74",
+      "arxiv": "quant-ph/0005055v1",
+      "primary_urls": [
+        "https://arxiv.org/abs/quant-ph/0005055v1",
+        "https://arxiv.org/pdf/quant-ph/0005055v1"
+      ],
+      "coverage": {
+        "status": "selected_full_text_checked",
+        "locations": [
+          "Section 4 and Theorem 12",
+          "Forward/inverse and reflection query accounting"
+        ]
+      },
+      "role": "Inherited amplitude estimation with paid state-preparation and inverse calls."
+    },
+    {
+      "number": 5,
+      "id": "lemieux_et_al_2024_sampling",
+      "authors": [
+        "Jessica Lemieux",
+        "Matteo Lostaglio",
+        "Sam Pallister",
+        "William Pol",
+        "Karthik Seetharam",
+        "Sukin Sim",
+        "Burak Şahinoğlu"
+      ],
+      "title": "Quantum sampling algorithms for quantum state preparation and matrix block-encoding",
+      "year": 2024,
+      "venue": "arXiv",
+      "arxiv": "2405.11436v1",
+      "primary_urls": [
+        "https://arxiv.org/abs/2405.11436v1",
+        "https://arxiv.org/html/2405.11436v1"
+      ],
+      "coverage": {
+        "status": "selected_full_text_checked",
+        "locations": [
+          "Sections 2–3",
+          "Sections 5.3–5.7",
+          "Appendix A"
+        ]
+      },
+      "role": "Reference sampling, comparator constructions, and access-dependent row/column encodings are inherited."
+    },
+    {
+      "number": 6,
+      "id": "nguyen_kiani_lloyd_2022_hierarchical",
+      "authors": [
+        "Quynh T. Nguyen",
+        "Bobak T. Kiani",
+        "Seth Lloyd"
+      ],
+      "title": "Block-encoding dense and full-rank kernels using hierarchical matrices: applications in quantum numerical linear algebra",
+      "year": 2022,
+      "venue": "Quantum",
+      "volume": "6",
+      "article": "876",
+      "doi": "10.22331/q-2022-12-13-876",
+      "arxiv": "2201.11329v4",
+      "primary_urls": [
+        "https://quantum-journal.org/papers/q-2022-12-13-876/",
+        "https://quantum-journal.org/papers/q-2022-12-13-876/pdf/",
+        "https://arxiv.org/abs/2201.11329v4"
+      ],
+      "coverage": {
+        "status": "selected_full_text_checked",
+        "locations": [
+          "Hierarchical kernel construction",
+          "Lemma 4.3 and Remark 4.2"
+        ]
+      },
+      "role": "Prior hierarchical kernel encodings; a shell mechanism alone is not claimed new."
+    },
+    {
+      "number": 7,
+      "id": "schwilk_usvyat_werner_2015_pairs",
+      "authors": [
+        "Max Schwilk",
+        "Denis Usvyat",
+        "Hans-Joachim Werner"
+      ],
+      "title": "Communication: Improved pair approximations in local coupled-cluster methods",
+      "year": 2015,
+      "venue": "Journal of Chemical Physics",
+      "volume": "142",
+      "article": "121102",
+      "doi": "10.1063/1.4916316",
+      "primary_urls": [
+        "https://doi.org/10.1063/1.4916316",
+        "https://www.itheoc.uni-stuttgart.de/research/werner/research/files/1.4916316_Reprint.pdf"
+      ],
+      "coverage": {
+        "status": "full_text_checked",
+        "locations": [
+          "Pair classification and long-range residual cancellation"
+        ]
+      },
+      "role": "Classical local-pair cancellations and improved distant/weak-pair treatments."
+    },
+    {
+      "number": 8,
+      "id": "mardirossian_mcclain_chan_2018_representation",
+      "authors": [
+        "Narbe Mardirossian",
+        "James D. McClain",
+        "Garnet Kin-Lic Chan"
+      ],
+      "title": "Lowering of the complexity of quantum chemistry methods by choice of representation",
+      "year": 2018,
+      "venue": "Journal of Chemical Physics",
+      "volume": "148",
+      "article": "044106",
+      "doi": "10.1063/1.5007779",
+      "arxiv": "1710.01004",
+      "primary_urls": [
+        "https://doi.org/10.1063/1.5007779",
+        "https://authors.library.caltech.edu/records/avd3x-v0s37"
+      ],
+      "coverage": {
+        "status": "primary_record_and_full_text_checked",
+        "locations": [
+          "Exact representation changes and LCCD scaling"
+        ]
+      },
+      "role": "Exact classical representation improvements undermine naive dense-contraction baselines."
+    },
+    {
+      "number": 9,
+      "id": "hansen_aurbakken_pedersen_2021_periodic",
+      "authors": [
+        "A. S. Hansen",
+        "E. Aurbakken",
+        "T. B. Pedersen"
+      ],
+      "title": "Smooth potential-energy surfaces in fragmentation-based local correlation methods for periodic systems",
+      "year": 2021,
+      "venue": "Molecular Physics",
+      "volume": "119",
+      "issue": "9",
+      "article": "e1896046",
+      "doi": "10.1080/00268976.2021.1896046",
+      "primary_urls": [
+        "https://doi.org/10.1080/00268976.2021.1896046",
+        "https://www.tandfonline.com/doi/full/10.1080/00268976.2021.1896046"
+      ],
+      "coverage": {
+        "status": "primary_indexed_text_and_selected_full_text_checked",
+        "locations": [
+          "Periodic local-correlation formulation",
+          "Translation-symmetric block-Toeplitz tensors"
+        ],
+        "access_note": "Direct publisher retrieval intermittently returned HTTP403; indexed primary publisher text was available."
+      },
+      "role": "Established periodic local domains and translation-based classical reductions."
+    },
+    {
+      "number": 10,
+      "id": "pham_et_al_2026_molecular_solids",
+      "authors": [
+        "Khanh Ngoc Pham",
+        "Marcin Modrzejewski",
+        "Péter R. Nagy",
+        "Jiří Klimeš"
+      ],
+      "title": "Sub-kJ/mol Precision at Practical Cost for Molecular Solids through Local Coupled-Cluster Approaches",
+      "year": 2026,
+      "venue": "Journal of Physical Chemistry A",
+      "volume": "130",
+      "issue": "43",
+      "pages": "8707–8721",
+      "doi": "10.1021/acs.jpca.6c05975",
+      "primary_urls": [
+        "https://doi.org/10.1021/acs.jpca.6c05975",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13726384/"
+      ],
+      "coverage": {
+        "status": "primary_full_text_checked",
+        "locations": [
+          "Local-method comparisons and long-range treatment"
+        ],
+        "access_note": "The archive was accessible during review; later requests sometimes returned a browser challenge."
+      },
+      "role": "Practical PNO/DLPNO/LNO comparator; not an exact theorem for this lattice LCCSD model."
+    },
+    {
+      "number": 11,
+      "id": "rodenas_ruiz_zhao_lee_2026_riccati",
+      "authors": [
+        "Pablo Rodenas-Ruiz",
+        "Andrew Zhao",
+        "Joonho Lee"
+      ],
+      "title": "Quantum Solvers for Nonlinear Matrix Equations in Quantum Chemistry",
+      "year": 2026,
+      "venue": "arXiv",
+      "arxiv": "2605.16189",
+      "primary_urls": [
+        "https://arxiv.org/abs/2605.16189",
+        "https://pablorodenas.me/papers/rodenasruiz2026quantum/"
+      ],
+      "coverage": {
+        "status": "author_abstract_and_record_checked",
+        "locations": [
+          "Author-hosted abstract"
+        ],
+        "access_note": "A full-proof technical comparison is not asserted here."
+      },
+      "role": "Related quantum-chemical amplitude block encodings and correlation-energy-density readout."
+    },
+    {
+      "number": 12,
+      "id": "tsemo_et_al_2026_qls",
+      "authors": [
+        "Peniel Bertrand Tsemo",
+        "Kenji Sugisaki",
+        "Ishita Bhattacharjee",
+        "V. S. Prasannaa"
+      ],
+      "title": "Quantum linear solvers for quantum chemistry: prospects of exponential quantum advantage",
+      "year": 2026,
+      "venue": "arXiv",
+      "arxiv": "2607.08220",
+      "version_under_review": "v2",
+      "primary_urls": [
+        "https://arxiv.org/abs/2607.08220v2",
+        "https://sites.google.com/view/srinivasaprasannaa/research-and-publications"
+      ],
+      "coverage": {
+        "status": "current_v2_full_text_unavailable",
+        "access_note": "Earlier-version material and bibliographic records were inspected; direct current abstract, HTML, PDF, and export-PDF routes failed on 2026-11-11."
+      },
+      "role": "Close lead with unresolved current-version coverage; no absence-of-overlap or priority inference."
+    },
+    {
+      "number": 13,
+      "id": "tong_an_wiebe_lin_2021_preconditioning",
+      "authors": ["Yu Tong", "Dong An", "Nathan Wiebe", "Lin Lin"],
+      "title": "Fast inversion, preconditioned quantum linear system solvers, and fast evaluation of matrix functions",
+      "year": 2021,
+      "venue": "Physical Review A",
+      "volume": "104",
+      "article": "032422",
+      "doi": "10.1103/PhysRevA.104.032422",
+      "arxiv": "2008.13295v2",
+      "primary_urls": ["https://arxiv.org/abs/2008.13295v2", "https://doi.org/10.1103/PhysRevA.104.032422"],
+      "coverage": {"status": "primary_abstract_and_record_checked"},
+      "role": "Prior quantum preconditioning and Green-function computation."
+    },
+    {
+      "number": 14,
+      "id": "cuccaro_et_al_2004_adder",
+      "authors": ["Steven A. Cuccaro", "Thomas G. Draper", "Samuel A. Kutin", "David Petrie Moulton"],
+      "title": "A new quantum ripple-carry addition circuit",
+      "year": 2004,
+      "venue": "arXiv",
+      "arxiv": "quant-ph/0410184v1",
+      "primary_urls": ["https://arxiv.org/abs/quant-ph/0410184v1", "https://arxiv.org/pdf/quant-ph/0410184"],
+      "coverage": {"status": "primary_record_checked_and_used_in_resource_audit"},
+      "role": "Inherited ripple-carry addition underlying the padded reversible-arithmetic budget."
+    },
+    {
+      "number": 15,
+      "id": "haner_roetteler_svore_2018_arithmetic",
+      "authors": ["Thomas Häner", "Martin Roetteler", "Krysta M. Svore"],
+      "title": "Optimizing Quantum Circuits for Arithmetic",
+      "year": 2018,
+      "venue": "arXiv",
+      "arxiv": "1805.12445v1",
+      "primary_urls": ["https://arxiv.org/abs/1805.12445v1"],
+      "coverage": {"status": "primary_abstract_and_record_checked"},
+      "role": "Optimized arithmetic alternative; no imported finite gate count is asserted."
+    },
+    {
+      "number": 16,
+      "id": "ross_selinger_2016_synthesis",
+      "authors": ["Neil J. Ross", "Peter Selinger"],
+      "title": "Optimal ancilla-free Clifford+T approximation of z-rotations",
+      "year": 2016,
+      "venue": "Quantum Information and Computation",
+      "volume": "16",
+      "issue": "11–12",
+      "pages": "901–953",
+      "arxiv": "1403.2975v3",
+      "primary_urls": ["https://arxiv.org/abs/1403.2975v3"],
+      "coverage": {"status": "primary_abstract_and_record_checked"},
+      "role": "Rotation-synthesis route; actual synthesized counts remain uncomputed."
+    }
+  ]
+}

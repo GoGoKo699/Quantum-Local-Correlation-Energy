@@ -1,0 +1,43 @@
+{
+  "status": "finite_algebra_check_only",
+  "L": 2,
+  "primitive_sites": 8,
+  "cells": 4,
+  "full_fixed_electron_dimension": 70,
+  "SD_dimension": 52,
+  "interaction_g": 0.005,
+  "inhomogeneous_p": [
+    0.2,
+    0.35,
+    0.6,
+    0.8
+  ],
+  "errors": {
+    "Fourier_unitarity": 4.453102181182355e-16,
+    "orbital_orthogonality": 3.1681985625370993e-16,
+    "charged_overlap": 4.135314666938077e-18,
+    "neutral_Gram": 1.6444529577077016e-18,
+    "source_formula": 3.983613150909722e-19,
+    "single_double_formula": 9.765345831585181e-19,
+    "HF_singles_residual": 5.421010862427522e-20
+  },
+  "normalizations": {
+    "G0_exact_finite_sum": 1.898045561543833,
+    "G0_uniform_bound": 10.716706155781871,
+    "Z_known_envelope": 10.995574287564276,
+    "J_norm": 0.006295057414631601,
+    "alpha_J": 0.015079644737231009,
+    "source_norm_squared_per_cell": 1.1627627685033391e-06,
+    "B0_squared": 0.0001136978427005494,
+    "K_norm": 0.002432928817550598,
+    "alpha_K": 0.08143938947175407,
+    "max_K_target_predecessors": 2,
+    "interaction_norm": 0.005615596868291384,
+    "Gamma_uniform_bound": 0.4622197938667743,
+    "Eg_Gershgorin": 0.94,
+    "certified_Delta": 0.47778020613322564,
+    "actual_minimum_eigenvalue": 0.9608801149002951
+  },
+  "correlation_energy_per_cell": -5.666418789796648e-07,
+  "scope": "Checks finite Poisson/Gram/source/K algebra and conservative bound constants. No asymptotic, material, runtime or quantum advantage claim."
+}
