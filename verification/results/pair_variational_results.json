@@ -1,0 +1,134 @@
+{
+  "status": "complete_SD_variational_scalar_and_residual_without_SD_vector",
+  "numpy": "2.3.5",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "structural_validation": [
+    {
+      "L": 2,
+      "variational_scalar_error": 2.117582368135751e-22,
+      "residual_norm_squared_error": 1.6543612251060553e-24,
+      "local_pair_component_max_error": 2.676624113323589e-19,
+      "single_component_max_error": 4.235164736271502e-22,
+      "offdiagonal_single_max": 0.0
+    },
+    {
+      "L": 4,
+      "variational_scalar_error": 0.0,
+      "residual_norm_squared_error": 2.6469779601696886e-23,
+      "local_pair_component_max_error": 2.0244087439377778e-19,
+      "single_component_max_error": 1.6940658945086007e-21,
+      "offdiagonal_single_max": 0.0
+    }
+  ],
+  "target_epsilon": 5.698089085861592e-09,
+  "instances": [
+    {
+      "L": 4,
+      "V": 32,
+      "unrestricted_SD_dimension": 247040,
+      "parameters": {
+        "g": 0.01,
+        "E0": 2.0,
+        "hopping": 0.02,
+        "max_graph_degree": 5
+      },
+      "coefficient_program": "p_x=1/4+bit_reverse_w((5*x+3) mod V)/(2V)",
+      "MP2_minus_energy_density": 2.4903993184784163e-06,
+      "variational_minus_energy_density": 2.480994460736713e-06,
+      "residual_norm_squared_channels": {
+        "local_pair_doubles": 1.0277824946058955e-08,
+        "local_singles": 2.645254305880438e-10,
+        "charge_transfer_doubles": 1.9214660186768336e-07,
+        "total": 2.0268895224433037e-07
+      },
+      "actual_finite_Green_diagonal": 2.4821854455706855,
+      "Delta_uniform": 0.8672180500069121,
+      "Delta_paid_finite_Green": 1.4464215457280964,
+      "rank_preconditioned_uniform_q": 0.37019024275319473,
+      "Delta_rank_uniform": 1.2596195144936106,
+      "energy_error_certificate_uniform": 7.30384908107579e-09,
+      "energy_error_certificate_paid_finite_Green": 4.379103572082725e-09,
+      "energy_error_certificate_rank_uniform": 5.028526221413548e-09,
+      "seconds_total": 0.0006851950001873774,
+      "pair_matrix_float64_bytes": 8192,
+      "scope": "Full finite SD target certified by exact residual identity; displayed arithmetic evaluated in double precision, not interval arithmetic; no physical material or quantum crossover claim.",
+      "meets_target_with_uniform_gap": false,
+      "meets_target_with_paid_finite_gap": true,
+      "meets_target_with_rank_uniform_gap": true
+    },
+    {
+      "L": 8,
+      "V": 256,
+      "unrestricted_SD_dimension": 1065435136,
+      "parameters": {
+        "g": 0.01,
+        "E0": 2.0,
+        "hopping": 0.02,
+        "max_graph_degree": 6
+      },
+      "coefficient_program": "p_x=1/4+bit_reverse_w((5*x+3) mod V)/(2V)",
+      "MP2_minus_energy_density": 2.2396267619099104e-06,
+      "variational_minus_energy_density": 2.2380259996542342e-06,
+      "residual_norm_squared_channels": {
+        "local_pair_doubles": 2.9783449502277677e-08,
+        "local_singles": 1.5827335540981992e-09,
+        "charge_transfer_doubles": 1.5495349996961134e-06,
+        "total": 1.5809011827524893e-06
+      },
+      "actual_finite_Green_diagonal": 2.8224775307241425,
+      "Delta_uniform": 0.8272180500069121,
+      "Delta_paid_finite_Green": 1.3807637752033899,
+      "rank_preconditioned_uniform_q": 0.37019024275319473,
+      "Delta_rank_uniform": 1.2596195144936106,
+      "energy_error_certificate_uniform": 7.465256887316846e-09,
+      "energy_error_certificate_paid_finite_Green": 4.472448767869261e-09,
+      "energy_error_certificate_rank_uniform": 4.902587784700628e-09,
+      "seconds_total": 0.006912812999871676,
+      "pair_matrix_float64_bytes": 524288,
+      "scope": "Full finite SD target certified by exact residual identity; displayed arithmetic evaluated in double precision, not interval arithmetic; no physical material or quantum crossover claim.",
+      "meets_target_with_uniform_gap": false,
+      "meets_target_with_paid_finite_gap": true,
+      "meets_target_with_rank_uniform_gap": true
+    },
+    {
+      "L": 16,
+      "V": 2048,
+      "unrestricted_SD_dimension": 4393756786688,
+      "parameters": {
+        "g": 0.01,
+        "E0": 2.0,
+        "hopping": 0.02,
+        "max_graph_degree": 6
+      },
+      "coefficient_program": "p_x=1/4+bit_reverse_w((5*x+3) mod V)/(2V)",
+      "MP2_minus_energy_density": 2.2368889440745828e-06,
+      "variational_minus_energy_density": 2.2376322775588525e-06,
+      "residual_norm_squared_channels": {
+        "local_pair_doubles": 1.9927614506992542e-07,
+        "local_singles": 1.2260357608705775e-08,
+        "charge_transfer_doubles": 1.2377543775683546e-05,
+        "total": 1.2589080278362177e-05
+      },
+      "actual_finite_Green_diagonal": 2.99871702341327,
+      "Delta_uniform": 0.8272180500069121,
+      "Delta_paid_finite_Green": 1.3675996911595134,
+      "rank_preconditioned_uniform_q": 0.37019024275319473,
+      "Delta_rank_uniform": 1.2596195144936106,
+      "energy_error_certificate_uniform": 7.430945026668202e-09,
+      "energy_error_certificate_paid_finite_Green": 4.494744985981471e-09,
+      "energy_error_certificate_rank_uniform": 4.88005447989605e-09,
+      "seconds_total": 0.8153397859996403,
+      "pair_matrix_float64_bytes": 33554432,
+      "scope": "Full finite SD target certified by exact residual identity; displayed arithmetic evaluated in double precision, not interval arithmetic; no physical material or quantum crossover claim.",
+      "meets_target_with_uniform_gap": false,
+      "meets_target_with_paid_finite_gap": true,
+      "meets_target_with_rank_uniform_gap": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "scope": "finite checks of analytic Fourier alias and uniform-signal lemma, not an asymptotic proof or advantage test",
+  "results": [
+    {
+      "L": 8,
+      "cell_frequency_count": 256,
+      "min_on_low_set": 0.5389270857693838,
+      "max_on_high_set": 0.33333333333333337,
+      "low_fraction": 0.10546875,
+      "high_fraction": 0.390625,
+      "variance": 0.02152018448123927,
+      "claimed_variance_lower": 0.0011111111111111111,
+      "independent_fft_alias_error": 1.6653345369377348e-16,
+      "mean_vs_diagonal_identity_error": 5.551115123125783e-17
+    },
+    {
+      "L": 16,
+      "cell_frequency_count": 2048,
+      "min_on_low_set": 0.5389270857693838,
+      "max_on_high_set": 0.33333333333333337,
+      "low_fraction": 0.06103515625,
+      "high_fraction": 0.31640625,
+      "variance": 0.02146346222886808,
+      "claimed_variance_lower": 0.0011111111111111111,
+      "independent_fft_alias_error": 3.3307014100590985e-16,
+      "mean_vs_diagonal_identity_error": 0.0
+    },
+    {
+      "L": 32,
+      "cell_frequency_count": 16384,
+      "min_on_low_set": 0.5389270857693838,
+      "max_on_high_set": 0.33333333333333337,
+      "low_fraction": 0.04449462890625,
+      "high_fraction": 0.2822265625,
+      "variance": 0.02146623962470868,
+      "claimed_variance_lower": 0.0011111111111111111,
+      "independent_fft_alias_error": 1.4434199620617169e-15,
+      "mean_vs_diagonal_identity_error": 0.0
+    }
+  ]
+}

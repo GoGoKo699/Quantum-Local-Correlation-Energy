@@ -1,0 +1,832 @@
+{
+  "status": "analytic_upper_budgets_not_compiled_circuit_counts",
+  "version": 1,
+  "coefficient_program": "p_x=1/4+bit_reverse_(3log2L-1)((5x+3) mod V)/(2V)",
+  "assumptions": [
+    "constant onsite E0=2",
+    "g=.01, t_o=t_v=.02 bounds, gamma_max=.5",
+    "exact procedural p; no arbitrary table or free QRAM",
+    "Z=8pi rotation-free shell reference",
+    "fresh success ancillas in all projected products",
+    "six extra controls padded on each primitive gate",
+    "failure probability applies to ideal logical execution of fixed compiled access circuits",
+    "no fault-tolerance, connectivity, magic-state throughput, or runtime model"
+  ],
+  "instances": [
+    {
+      "L": 4,
+      "V": 32,
+      "epsilon": 5.698089085861593e-09,
+      "target_failure": 0.01,
+      "constants": {
+        "g": 0.01,
+        "E0": 2.0,
+        "t_o": 0.02,
+        "t_v": 0.02,
+        "gamma_max": 0.5,
+        "Z": 25.132741228718345,
+        "Gbar": 10.716706155781871,
+        "alpha_J": 0.031415926535897934,
+        "alpha_K": 0.25132741228718347,
+        "physical_K_bound": 0.1641158745025839,
+        "beta_terms": [
+          0.12,
+          0.37699111843077515,
+          0.031415926535897934,
+          0.08885765876316733
+        ],
+        "q_terms": [
+          0.12,
+          0.16075059233672806,
+          0.031415926535897934,
+          0.05802372388056874
+        ],
+        "beta": 0.6172647037298404,
+        "q": 0.37019024275319473,
+        "B0_squared": 0.0004934802200544679,
+        "Bc_squared": 0.00012337005501361699,
+        "original_Delta": 0.8272180500069122,
+        "original_alpha_A": 6.160227887822085,
+        "preconditioned_Delta": 1.2596195144936106,
+        "Lambda": 5.4127819499930885,
+        "default_epsilon": 5.698089085861593e-09
+      },
+      "precision": {
+        "neumann_degree": 11,
+        "neumann_lcu_norm": 2.6047779269834512,
+        "tail_error": 1.2974779507168677e-09,
+        "amplitude_bits": 26,
+        "primitive_tolerance": 1.4901161193847656e-08,
+        "implemented_M_error": 5.88669494371262e-07,
+        "implemented_source_error": 4.76837158203125e-07,
+        "perturbed_norm_bound": 0.3701908314226891,
+        "primitive_scalar_error": 3.6989977580503297e-10,
+        "geometric_cdf_bits": 24,
+        "geometric_scalar_error": 4.596971456769041e-10,
+        "AE_probability_error": 4.432908653733773e-06,
+        "AE_M": 1048576,
+        "AE_error_bound": 2.9960652026920545e-06,
+        "AE_energy_error_bound": 1.9255806701103498e-09
+      },
+      "arithmetic": {
+        "cosine_error_bits": 66,
+        "cosine_degree_in_x_squared": 12,
+        "fraction_bits": 97,
+        "uniform_arithmetic_word_bits": 177
+      },
+      "geometric_weight_table": {
+        "endpoint_bits": 24,
+        "integer_endpoints": [
+          0,
+          6440939,
+          10416703,
+          12870802,
+          14385631,
+          15320681,
+          15897855,
+          16254124,
+          16474036,
+          16609780,
+          16693570,
+          16745291,
+          16777216
+        ],
+        "observed_L1_weight_error": 1.5461071034080647e-07,
+        "analytic_L1_weight_error_upper": 1.430511474609375e-06,
+        "constant_table_scope": "Default parameters only; 90-digit Decimal evaluation, not interval-certified compilation"
+      },
+      "primitive_operation_budgets": {
+        "cosine_forward": {
+          "boolean": 56518480,
+          "hadamard": 0,
+          "phase": 0
+        },
+        "frequency_predicate": {
+          "boolean": 351278952,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "gamma_predicate": {
+          "boolean": 8088032,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "W": {
+          "boolean": 359370524,
+          "hadamard": 110,
+          "phase": 7
+        },
+        "density_half_Green": {
+          "boolean": 351508448,
+          "hadamard": 104,
+          "phase": 12
+        },
+        "M_block": {
+          "boolean": 5687780240,
+          "hadamard": 1780,
+          "phase": 152
+        },
+        "B_source": {
+          "boolean": 1438196389,
+          "hadamard": 446,
+          "phase": 28
+        },
+        "scalar_unitary": {
+          "boolean": 65442164142,
+          "hadamard": 20522,
+          "phase": 1728
+        }
+      },
+      "calls_per_scalar": {
+        "B_source": 2,
+        "M_block": 11,
+        "W_upper": 96,
+        "density_half_Green_upper": 88
+      },
+      "analytic_controlled_scalar_budget": {
+        "Toffoli_upper": 850748423096,
+        "additional_exact_T_upper": 41044,
+        "unsynthesized_phase_rotations_upper": 5184,
+        "phase_operator_error_per_rotation": 3.8805107275644936e-11
+      },
+      "analytic_logical_qubit_upper": 37946,
+      "fresh_signal_qubits_per_M": 1594,
+      "fresh_signal_qubits_per_B": 584,
+      "reusable_arithmetic_qubits": 19180,
+      "amplitude_estimation": {
+        "repetitions": 11,
+        "median_failure_upper": 0.0088744693825435,
+        "M": 1048576,
+        "inverse_QFT_operator_error": 1e-06,
+        "inverse_QFT_rotation_error": 5.263157894736842e-09,
+        "Hadamard_test_preparations": 23068661,
+        "Grover_iterations": 11534325,
+        "W_calls_upper": 2214591456,
+        "density_half_Green_calls_upper": 2030042168
+      },
+      "complete_analytic_budget": {
+        "logical_qubits_upper": 37966,
+        "Toffoli_upper": 19625630472352756456,
+        "additional_exact_T_upper": 946830122084,
+        "unsynthesized_phase_rotations_upper": 119587940714,
+        "rotation_synthesis_status": "Not run; no compiled T count asserted",
+        "Clifford_T_conversion": "7*Toffoli + additional_exact_T + sum(actual synthesized phase T counts); clean ancillary Toffoli convention",
+        "setup": "Polynomial-size arithmetic/phase and small CDF constant compilation; not timed. Effective model is supplied, not derived from nuclei.",
+        "output": "One scalar and classical median over repetitions; no amplitudes or full SD vector read out"
+      },
+      "total_scalar_error_budget": 4.0526555423091544e-09
+    },
+    {
+      "L": 8,
+      "V": 256,
+      "epsilon": 5.698089085861593e-09,
+      "target_failure": 0.01,
+      "constants": {
+        "g": 0.01,
+        "E0": 2.0,
+        "t_o": 0.02,
+        "t_v": 0.02,
+        "gamma_max": 0.5,
+        "Z": 25.132741228718345,
+        "Gbar": 10.716706155781871,
+        "alpha_J": 0.031415926535897934,
+        "alpha_K": 0.25132741228718347,
+        "physical_K_bound": 0.1641158745025839,
+        "beta_terms": [
+          0.12,
+          0.37699111843077515,
+          0.031415926535897934,
+          0.08885765876316733
+        ],
+        "q_terms": [
+          0.12,
+          0.16075059233672806,
+          0.031415926535897934,
+          0.05802372388056874
+        ],
+        "beta": 0.6172647037298404,
+        "q": 0.37019024275319473,
+        "B0_squared": 0.0004934802200544679,
+        "Bc_squared": 0.00012337005501361699,
+        "original_Delta": 0.8272180500069122,
+        "original_alpha_A": 6.160227887822085,
+        "preconditioned_Delta": 1.2596195144936106,
+        "Lambda": 5.4127819499930885,
+        "default_epsilon": 5.698089085861593e-09
+      },
+      "precision": {
+        "neumann_degree": 11,
+        "neumann_lcu_norm": 2.6047779269834512,
+        "tail_error": 1.2974779507168677e-09,
+        "amplitude_bits": 26,
+        "primitive_tolerance": 1.4901161193847656e-08,
+        "implemented_M_error": 5.88669494371262e-07,
+        "implemented_source_error": 4.76837158203125e-07,
+        "perturbed_norm_bound": 0.3701908314226891,
+        "primitive_scalar_error": 3.6989977580503297e-10,
+        "geometric_cdf_bits": 24,
+        "geometric_scalar_error": 4.596971456769041e-10,
+        "AE_probability_error": 4.432908653733773e-06,
+        "AE_M": 1048576,
+        "AE_error_bound": 2.9960652026920545e-06,
+        "AE_energy_error_bound": 1.9255806701103498e-09
+      },
+      "arithmetic": {
+        "cosine_error_bits": 68,
+        "cosine_degree_in_x_squared": 12,
+        "fraction_bits": 99,
+        "uniform_arithmetic_word_bits": 185
+      },
+      "geometric_weight_table": {
+        "endpoint_bits": 24,
+        "integer_endpoints": [
+          0,
+          6440939,
+          10416703,
+          12870802,
+          14385631,
+          15320681,
+          15897855,
+          16254124,
+          16474036,
+          16609780,
+          16693570,
+          16745291,
+          16777216
+        ],
+        "observed_L1_weight_error": 1.5461071034080647e-07,
+        "analytic_L1_weight_error_upper": 1.430511474609375e-06,
+        "constant_table_scope": "Default parameters only; 90-digit Decimal evaluation, not interval-certified compilation"
+      },
+      "primitive_operation_budgets": {
+        "cosine_forward": {
+          "boolean": 61725136,
+          "hadamard": 0,
+          "phase": 0
+        },
+        "frequency_predicate": {
+          "boolean": 383637160,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "gamma_predicate": {
+          "boolean": 8832634,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "W": {
+          "boolean": 392473494,
+          "hadamard": 113,
+          "phase": 14
+        },
+        "density_half_Green": {
+          "boolean": 383954722,
+          "hadamard": 122,
+          "phase": 27
+        },
+        "M_block": {
+          "boolean": 6212207856,
+          "hadamard": 1948,
+          "phase": 328
+        },
+        "B_source": {
+          "boolean": 1570640400,
+          "hadamard": 461,
+          "phase": 56
+        },
+        "scalar_unitary": {
+          "boolean": 71475764420,
+          "hadamard": 22400,
+          "phase": 3720
+        }
+      },
+      "calls_per_scalar": {
+        "B_source": 2,
+        "M_block": 11,
+        "W_upper": 96,
+        "density_half_Green_upper": 88
+      },
+      "analytic_controlled_scalar_budget": {
+        "Toffoli_upper": 929185277020,
+        "additional_exact_T_upper": 44800,
+        "unsynthesized_phase_rotations_upper": 11160,
+        "phase_operator_error_per_rotation": 1.7246714344731083e-11
+      },
+      "analytic_logical_qubit_upper": 41494,
+      "fresh_signal_qubits_per_M": 1818,
+      "fresh_signal_qubits_per_B": 688,
+      "reusable_arithmetic_qubits": 20044,
+      "amplitude_estimation": {
+        "repetitions": 11,
+        "median_failure_upper": 0.0088744693825435,
+        "M": 1048576,
+        "inverse_QFT_operator_error": 1e-06,
+        "inverse_QFT_rotation_error": 5.263157894736842e-09,
+        "Hadamard_test_preparations": 23068661,
+        "Grover_iterations": 11534325,
+        "W_calls_upper": 2214591456,
+        "density_half_Green_calls_upper": 2030042168
+      },
+      "complete_analytic_budget": {
+        "logical_qubits_upper": 41514,
+        "Toffoli_upper": 21435063992822313020,
+        "additional_exact_T_upper": 1033476012800,
+        "unsynthesized_phase_rotations_upper": 257446258850,
+        "rotation_synthesis_status": "Not run; no compiled T count asserted",
+        "Clifford_T_conversion": "7*Toffoli + additional_exact_T + sum(actual synthesized phase T counts); clean ancillary Toffoli convention",
+        "setup": "Polynomial-size arithmetic/phase and small CDF constant compilation; not timed. Effective model is supplied, not derived from nuclei.",
+        "output": "One scalar and classical median over repetitions; no amplitudes or full SD vector read out"
+      },
+      "total_scalar_error_budget": 4.0526555423091544e-09
+    },
+    {
+      "L": 16,
+      "V": 2048,
+      "epsilon": 5.698089085861593e-09,
+      "target_failure": 0.01,
+      "constants": {
+        "g": 0.01,
+        "E0": 2.0,
+        "t_o": 0.02,
+        "t_v": 0.02,
+        "gamma_max": 0.5,
+        "Z": 25.132741228718345,
+        "Gbar": 10.716706155781871,
+        "alpha_J": 0.031415926535897934,
+        "alpha_K": 0.25132741228718347,
+        "physical_K_bound": 0.1641158745025839,
+        "beta_terms": [
+          0.12,
+          0.37699111843077515,
+          0.031415926535897934,
+          0.08885765876316733
+        ],
+        "q_terms": [
+          0.12,
+          0.16075059233672806,
+          0.031415926535897934,
+          0.05802372388056874
+        ],
+        "beta": 0.6172647037298404,
+        "q": 0.37019024275319473,
+        "B0_squared": 0.0004934802200544679,
+        "Bc_squared": 0.00012337005501361699,
+        "original_Delta": 0.8272180500069122,
+        "original_alpha_A": 6.160227887822085,
+        "preconditioned_Delta": 1.2596195144936106,
+        "Lambda": 5.4127819499930885,
+        "default_epsilon": 5.698089085861593e-09
+      },
+      "precision": {
+        "neumann_degree": 11,
+        "neumann_lcu_norm": 2.6047779269834512,
+        "tail_error": 1.2974779507168677e-09,
+        "amplitude_bits": 26,
+        "primitive_tolerance": 1.4901161193847656e-08,
+        "implemented_M_error": 5.88669494371262e-07,
+        "implemented_source_error": 4.76837158203125e-07,
+        "perturbed_norm_bound": 0.3701908314226891,
+        "primitive_scalar_error": 3.6989977580503297e-10,
+        "geometric_cdf_bits": 24,
+        "geometric_scalar_error": 4.596971456769041e-10,
+        "AE_probability_error": 4.432908653733773e-06,
+        "AE_M": 1048576,
+        "AE_error_bound": 2.9960652026920545e-06,
+        "AE_energy_error_bound": 1.9255806701103498e-09
+      },
+      "arithmetic": {
+        "cosine_error_bits": 70,
+        "cosine_degree_in_x_squared": 13,
+        "fraction_bits": 102,
+        "uniform_arithmetic_word_bits": 194
+      },
+      "geometric_weight_table": {
+        "endpoint_bits": 24,
+        "integer_endpoints": [
+          0,
+          6440939,
+          10416703,
+          12870802,
+          14385631,
+          15320681,
+          15897855,
+          16254124,
+          16474036,
+          16609780,
+          16693570,
+          16745291,
+          16777216
+        ],
+        "observed_L1_weight_error": 1.5461071034080647e-07,
+        "analytic_L1_weight_error_upper": 1.430511474609375e-06,
+        "constant_table_scope": "Default parameters only; 90-digit Decimal evaluation, not interval-certified compilation"
+      },
+      "primitive_operation_budgets": {
+        "cosine_forward": {
+          "boolean": 72701570,
+          "hadamard": 0,
+          "phase": 0
+        },
+        "frequency_predicate": {
+          "boolean": 450812572,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "gamma_predicate": {
+          "boolean": 9709456,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "W": {
+          "boolean": 460525908,
+          "hadamard": 116,
+          "phase": 24
+        },
+        "density_half_Green": {
+          "boolean": 451226972,
+          "hadamard": 140,
+          "phase": 48
+        },
+        "M_block": {
+          "boolean": 7294843040,
+          "hadamard": 2116,
+          "phase": 576
+        },
+        "B_source": {
+          "boolean": 1842886203,
+          "hadamard": 476,
+          "phase": 96
+        },
+        "scalar_unitary": {
+          "boolean": 83929252590,
+          "hadamard": 24278,
+          "phase": 6528
+        }
+      },
+      "calls_per_scalar": {
+        "B_source": 2,
+        "M_block": 11,
+        "W_upper": 96,
+        "density_half_Green_upper": 88
+      },
+      "analytic_controlled_scalar_budget": {
+        "Toffoli_upper": 1091080684148,
+        "additional_exact_T_upper": 48556,
+        "unsynthesized_phase_rotations_upper": 19584,
+        "phase_operator_error_per_rotation": 9.701276818911234e-12
+      },
+      "analytic_logical_qubit_upper": 45732,
+      "fresh_signal_qubits_per_M": 2042,
+      "fresh_signal_qubits_per_B": 792,
+      "reusable_arithmetic_qubits": 21598,
+      "amplitude_estimation": {
+        "repetitions": 11,
+        "median_failure_upper": 0.0088744693825435,
+        "M": 1048576,
+        "inverse_QFT_operator_error": 1e-06,
+        "inverse_QFT_rotation_error": 5.263157894736842e-09,
+        "Hadamard_test_preparations": 23068661,
+        "Grover_iterations": 11534325,
+        "W_calls_upper": 2214591456,
+        "density_half_Green_calls_upper": 2030042168
+      },
+      "complete_analytic_budget": {
+        "logical_qubits_upper": 45752,
+        "Toffoli_upper": 25169774648374883428,
+        "additional_exact_T_upper": 1120121903516,
+        "unsynthesized_phase_rotations_upper": 451776659114,
+        "rotation_synthesis_status": "Not run; no compiled T count asserted",
+        "Clifford_T_conversion": "7*Toffoli + additional_exact_T + sum(actual synthesized phase T counts); clean ancillary Toffoli convention",
+        "setup": "Polynomial-size arithmetic/phase and small CDF constant compilation; not timed. Effective model is supplied, not derived from nuclei.",
+        "output": "One scalar and classical median over repetitions; no amplitudes or full SD vector read out"
+      },
+      "total_scalar_error_budget": 4.0526555423091544e-09
+    },
+    {
+      "L": 64,
+      "V": 131072,
+      "epsilon": 5.698089085861593e-09,
+      "target_failure": 0.01,
+      "constants": {
+        "g": 0.01,
+        "E0": 2.0,
+        "t_o": 0.02,
+        "t_v": 0.02,
+        "gamma_max": 0.5,
+        "Z": 25.132741228718345,
+        "Gbar": 10.716706155781871,
+        "alpha_J": 0.031415926535897934,
+        "alpha_K": 0.25132741228718347,
+        "physical_K_bound": 0.1641158745025839,
+        "beta_terms": [
+          0.12,
+          0.37699111843077515,
+          0.031415926535897934,
+          0.08885765876316733
+        ],
+        "q_terms": [
+          0.12,
+          0.16075059233672806,
+          0.031415926535897934,
+          0.05802372388056874
+        ],
+        "beta": 0.6172647037298404,
+        "q": 0.37019024275319473,
+        "B0_squared": 0.0004934802200544679,
+        "Bc_squared": 0.00012337005501361699,
+        "original_Delta": 0.8272180500069122,
+        "original_alpha_A": 6.160227887822085,
+        "preconditioned_Delta": 1.2596195144936106,
+        "Lambda": 5.4127819499930885,
+        "default_epsilon": 5.698089085861593e-09
+      },
+      "precision": {
+        "neumann_degree": 11,
+        "neumann_lcu_norm": 2.6047779269834512,
+        "tail_error": 1.2974779507168677e-09,
+        "amplitude_bits": 26,
+        "primitive_tolerance": 1.4901161193847656e-08,
+        "implemented_M_error": 5.88669494371262e-07,
+        "implemented_source_error": 4.76837158203125e-07,
+        "perturbed_norm_bound": 0.3701908314226891,
+        "primitive_scalar_error": 3.6989977580503297e-10,
+        "geometric_cdf_bits": 24,
+        "geometric_scalar_error": 4.596971456769041e-10,
+        "AE_probability_error": 4.432908653733773e-06,
+        "AE_M": 1048576,
+        "AE_error_bound": 2.9960652026920545e-06,
+        "AE_energy_error_bound": 1.9255806701103498e-09
+      },
+      "arithmetic": {
+        "cosine_error_bits": 74,
+        "cosine_degree_in_x_squared": 13,
+        "fraction_bits": 106,
+        "uniform_arithmetic_word_bits": 210
+      },
+      "geometric_weight_table": {
+        "endpoint_bits": 24,
+        "integer_endpoints": [
+          0,
+          6440939,
+          10416703,
+          12870802,
+          14385631,
+          15320681,
+          15897855,
+          16254124,
+          16474036,
+          16609780,
+          16693570,
+          16745291,
+          16777216
+        ],
+        "observed_L1_weight_error": 1.5461071034080647e-07,
+        "analytic_L1_weight_error_upper": 1.430511474609375e-06,
+        "constant_table_scope": "Default parameters only; 90-digit Decimal evaluation, not interval-certified compilation"
+      },
+      "primitive_operation_budgets": {
+        "cosine_forward": {
+          "boolean": 85148754,
+          "hadamard": 0,
+          "phase": 0
+        },
+        "frequency_predicate": {
+          "boolean": 527990268,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "gamma_predicate": {
+          "boolean": 11370692,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "W": {
+          "boolean": 539365160,
+          "hadamard": 122,
+          "phase": 53
+        },
+        "density_half_Green": {
+          "boolean": 528614912,
+          "hadamard": 176,
+          "phase": 108
+        },
+        "M_block": {
+          "boolean": 8544727904,
+          "hadamard": 2452,
+          "phase": 1288
+        },
+        "B_source": {
+          "boolean": 2158307473,
+          "hadamard": 506,
+          "phase": 212
+        },
+        "scalar_unitary": {
+          "boolean": 98308845594,
+          "hadamard": 28034,
+          "phase": 14592
+        }
+      },
+      "calls_per_scalar": {
+        "B_source": 2,
+        "M_block": 11,
+        "W_upper": 96,
+        "density_half_Green_upper": 88
+      },
+      "analytic_controlled_scalar_budget": {
+        "Toffoli_upper": 1278015546860,
+        "additional_exact_T_upper": 56068,
+        "unsynthesized_phase_rotations_upper": 43776,
+        "phase_operator_error_per_rotation": 4.311678586182771e-12
+      },
+      "analytic_logical_qubit_upper": 52876,
+      "fresh_signal_qubits_per_M": 2490,
+      "fresh_signal_qubits_per_B": 1000,
+      "reusable_arithmetic_qubits": 23374,
+      "amplitude_estimation": {
+        "repetitions": 11,
+        "median_failure_upper": 0.0088744693825435,
+        "M": 1048576,
+        "inverse_QFT_operator_error": 1e-06,
+        "inverse_QFT_rotation_error": 5.263157894736842e-09,
+        "Hadamard_test_preparations": 23068661,
+        "Grover_iterations": 11534325,
+        "W_calls_upper": 2214591456,
+        "density_half_Green_calls_upper": 2030042168
+      },
+      "complete_analytic_budget": {
+        "logical_qubits_upper": 52896,
+        "Toffoli_upper": 29482112284569294460,
+        "additional_exact_T_upper": 1293413684948,
+        "unsynthesized_phase_rotations_upper": 1009853706026,
+        "rotation_synthesis_status": "Not run; no compiled T count asserted",
+        "Clifford_T_conversion": "7*Toffoli + additional_exact_T + sum(actual synthesized phase T counts); clean ancillary Toffoli convention",
+        "setup": "Polynomial-size arithmetic/phase and small CDF constant compilation; not timed. Effective model is supplied, not derived from nuclei.",
+        "output": "One scalar and classical median over repetitions; no amplitudes or full SD vector read out"
+      },
+      "total_scalar_error_budget": 4.0526555423091544e-09
+    },
+    {
+      "L": 256,
+      "V": 8388608,
+      "epsilon": 5.698089085861593e-09,
+      "target_failure": 0.01,
+      "constants": {
+        "g": 0.01,
+        "E0": 2.0,
+        "t_o": 0.02,
+        "t_v": 0.02,
+        "gamma_max": 0.5,
+        "Z": 25.132741228718345,
+        "Gbar": 10.716706155781871,
+        "alpha_J": 0.031415926535897934,
+        "alpha_K": 0.25132741228718347,
+        "physical_K_bound": 0.1641158745025839,
+        "beta_terms": [
+          0.12,
+          0.37699111843077515,
+          0.031415926535897934,
+          0.08885765876316733
+        ],
+        "q_terms": [
+          0.12,
+          0.16075059233672806,
+          0.031415926535897934,
+          0.05802372388056874
+        ],
+        "beta": 0.6172647037298404,
+        "q": 0.37019024275319473,
+        "B0_squared": 0.0004934802200544679,
+        "Bc_squared": 0.00012337005501361699,
+        "original_Delta": 0.8272180500069122,
+        "original_alpha_A": 6.160227887822085,
+        "preconditioned_Delta": 1.2596195144936106,
+        "Lambda": 5.4127819499930885,
+        "default_epsilon": 5.698089085861593e-09
+      },
+      "precision": {
+        "neumann_degree": 11,
+        "neumann_lcu_norm": 2.6047779269834512,
+        "tail_error": 1.2974779507168677e-09,
+        "amplitude_bits": 26,
+        "primitive_tolerance": 1.4901161193847656e-08,
+        "implemented_M_error": 5.88669494371262e-07,
+        "implemented_source_error": 4.76837158203125e-07,
+        "perturbed_norm_bound": 0.3701908314226891,
+        "primitive_scalar_error": 3.6989977580503297e-10,
+        "geometric_cdf_bits": 24,
+        "geometric_scalar_error": 4.596971456769041e-10,
+        "AE_probability_error": 4.432908653733773e-06,
+        "AE_M": 1048576,
+        "AE_error_bound": 2.9960652026920545e-06,
+        "AE_energy_error_bound": 1.9255806701103498e-09
+      },
+      "arithmetic": {
+        "cosine_error_bits": 78,
+        "cosine_degree_in_x_squared": 14,
+        "fraction_bits": 112,
+        "uniform_arithmetic_word_bits": 228
+      },
+      "geometric_weight_table": {
+        "endpoint_bits": 24,
+        "integer_endpoints": [
+          0,
+          6440939,
+          10416703,
+          12870802,
+          14385631,
+          15320681,
+          15897855,
+          16254124,
+          16474036,
+          16609780,
+          16693570,
+          16745291,
+          16777216
+        ],
+        "observed_L1_weight_error": 1.5461071034080647e-07,
+        "analytic_L1_weight_error_upper": 1.430511474609375e-06,
+        "constant_table_scope": "Default parameters only; 90-digit Decimal evaluation, not interval-certified compilation"
+      },
+      "primitive_operation_budgets": {
+        "cosine_forward": {
+          "boolean": 107012984,
+          "hadamard": 0,
+          "phase": 0
+        },
+        "frequency_predicate": {
+          "boolean": 662217072,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "gamma_predicate": {
+          "boolean": 13396208,
+          "hadamard": 52,
+          "phase": 0
+        },
+        "W": {
+          "boolean": 675617840,
+          "hadamard": 128,
+          "phase": 94
+        },
+        "density_half_Green": {
+          "boolean": 663086144,
+          "hadamard": 212,
+          "phase": 192
+        },
+        "M_block": {
+          "boolean": 10710594944,
+          "hadamard": 2788,
+          "phase": 2288
+        },
+        "B_source": {
+          "boolean": 2703390487,
+          "hadamard": 536,
+          "phase": 376
+        },
+        "scalar_unitary": {
+          "boolean": 123223568142,
+          "hadamard": 31790,
+          "phase": 25920
+        }
+      },
+      "calls_per_scalar": {
+        "B_source": 2,
+        "M_block": 11,
+        "W_upper": 96,
+        "density_half_Green_upper": 88
+      },
+      "analytic_controlled_scalar_budget": {
+        "Toffoli_upper": 1601907136076,
+        "additional_exact_T_upper": 63580,
+        "unsynthesized_phase_rotations_upper": 77760,
+        "phase_operator_error_per_rotation": 2.4253192047278085e-12
+      },
+      "analytic_logical_qubit_upper": 60926,
+      "fresh_signal_qubits_per_M": 2938,
+      "fresh_signal_qubits_per_B": 1208,
+      "reusable_arithmetic_qubits": 26056,
+      "amplitude_estimation": {
+        "repetitions": 11,
+        "median_failure_upper": 0.0088744693825435,
+        "M": 1048576,
+        "inverse_QFT_operator_error": 1e-06,
+        "inverse_QFT_rotation_error": 5.263157894736842e-09,
+        "Hadamard_test_preparations": 23068661,
+        "Grover_iterations": 11534325,
+        "W_calls_upper": 2214591456,
+        "density_half_Green_calls_upper": 2030042168
+      },
+      "complete_analytic_budget": {
+        "logical_qubits_upper": 60946,
+        "Toffoli_upper": 36953858299754984236,
+        "additional_exact_T_upper": 1466705466380,
+        "unsynthesized_phase_rotations_upper": 1793819081450,
+        "rotation_synthesis_status": "Not run; no compiled T count asserted",
+        "Clifford_T_conversion": "7*Toffoli + additional_exact_T + sum(actual synthesized phase T counts); clean ancillary Toffoli convention",
+        "setup": "Polynomial-size arithmetic/phase and small CDF constant compilation; not timed. Effective model is supplied, not derived from nuclei.",
+        "output": "One scalar and classical median over repetitions; no amplitudes or full SD vector read out"
+      },
+      "total_scalar_error_budget": 4.0526555423091544e-09
+    }
+  ]
+}

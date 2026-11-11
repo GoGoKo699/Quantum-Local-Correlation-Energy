@@ -1,0 +1,225 @@
+{
+  "status": "matched_classical_small_system_benchmark",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "python": "3.12.14",
+  "system": "Linux",
+  "machine": "x86_64",
+  "OPENBLAS_NUM_THREADS": "1",
+  "independent_full_fermion_validation": {
+    "full_fixed_electron_dimension": 70,
+    "SD_dimension": 52,
+    "matrix_max_error": 8.881784197001252e-16,
+    "matrix_spectral_error": 8.89172069203918e-16,
+    "source_max_error": 8.673617379884035e-19,
+    "symmetry_error": 1.371419323662774e-18,
+    "MP2_fft_error": 0.0
+  },
+  "requested_scalar_tolerance": 1e-10,
+  "instances": [
+    {
+      "L": 2,
+      "V": 4,
+      "dimensions": {
+        "singles": 16,
+        "doubles": 36,
+        "total": 52
+      },
+      "coefficient_program": "p_x=1/4+bit_reverse_w((5*x+3) mod V)/(2V), w=log2 V",
+      "parameters": {
+        "g": 0.01,
+        "E0": 2.0,
+        "hopping": 0.02,
+        "max_graph_degree": 2
+      },
+      "certificates": {
+        "Delta_uniform": 0.987218050006912,
+        "Gamma_uniform": 0.9327819499930879,
+        "q_uniform": 0.506390974996544,
+        "q_finite_absolute_rows": 0.05298384146276127,
+        "B0_squared": 0.0004934802200544679,
+        "BD_squared_actual": 1.5800262376113267e-06
+      },
+      "reference": {
+        "minus_energy_per_cell": 1.5783944519295118e-06,
+        "CG_linear_scalar": 1.5783944519295118e-06,
+        "CG_iterations": 7,
+        "residual_l2": 4.752764139109118e-16,
+        "variational_residual_error_bound": 5.720308436885722e-32
+      },
+      "mp2": {
+        "minus_energy_per_cell": 1.5800262376113267e-06,
+        "absolute_bias_vs_SD": 1.6317856818148417e-09,
+        "relative_bias_vs_SD": 0.0010338262908996302,
+        "fft_vs_direct_contraction_error": 0.0,
+        "anchor_estimator_variance": 2.0350414710674712e-14,
+        "homogeneous_control_variance": 2.035041471067471e-14,
+        "pair_importance_estimator_mean": 1.5800262376113267e-06,
+        "pair_importance_variance": 4.7087404117718486e-14,
+        "known_control_mean": 1.5831637003547962e-06,
+        "centered_pair_variance": 8.819930530127616e-17,
+        "pair_variance_reduction_factor": 533.8749999999964,
+        "note": "The exact same MP2 number is obtained deterministically by FFT. Anchor variance does not imply that sampling is the best comparator."
+      },
+      "neumann": [
+        {
+          "degree": 0,
+          "scalar": 1.5800262376113267e-06,
+          "absolute_error_vs_CG": 1.6317856818148417e-09,
+          "uniform_bias_certificate": 1.6209408387103916e-06,
+          "finite_absolute_row_bias_certificate": 8.839961063590428e-08,
+          "trial_variational_scalar": 1.578074522216751e-06,
+          "trial_variational_error_vs_CG": 3.1992971276086036e-10,
+          "trial_variational_residual_certificate": 1.2981966760008886e-09
+        },
+        {
+          "degree": 1,
+          "scalar": 1.578074522216751e-06,
+          "absolute_error_vs_CG": 3.1992971276086036e-10,
+          "uniform_bias_certificate": 8.20829811726271e-07,
+          "finite_absolute_row_bias_certificate": 4.683750955302578e-09,
+          "trial_variational_scalar": 1.578394320609506e-06,
+          "trial_variational_error_vs_CG": 1.313200058169052e-13,
+          "trial_variational_residual_certificate": 5.333456363172789e-13
+        },
+        {
+          "degree": 2,
+          "scalar": 1.57839588318154e-06,
+          "absolute_error_vs_CG": 1.4312520280918169e-12,
+          "uniform_bias_certificate": 4.1566080866629594e-07,
+          "finite_absolute_row_bias_certificate": 2.481631180668084e-10,
+          "trial_variational_scalar": 1.578394451873417e-06,
+          "trial_variational_error_vs_CG": 5.609475693191604e-17,
+          "trial_variational_residual_certificate": 2.264178244123989e-16
+        },
+        {
+          "degree": 3,
+          "scalar": 1.5783943206095068e-06,
+          "absolute_error_vs_CG": 1.3132000496987226e-13,
+          "uniform_bias_certificate": 2.1048688216837752e-07,
+          "finite_absolute_row_bias_certificate": 1.3148635304556284e-11,
+          "trial_variational_scalar": 1.5783944519294866e-06,
+          "trial_variational_error_vs_CG": 2.5199230180815435e-20,
+          "trial_variational_residual_certificate": 9.973595393385202e-20
+        }
+      ],
+      "seconds": {
+        "input_and_operator_setup": 0.0019625059994723415,
+        "primitive_Green_FFT_only": 3.0494999919028487e-05,
+        "one_structural_SD_matvec": 9.348799994768342e-05,
+        "preconditioned_CG": 0.002216100999248738,
+        "MP2_scalar_FFT_after_input_setup": 0.00017689200012682704,
+        "Neumann_sum": 0.0013004450001972145
+      },
+      "retained_operator_data_bytes": 5332,
+      "validation_scope": "Same finite effective model in double precision; residual arithmetic itself is not interval certified. No material, FT timing, or asymptotic advantage claim."
+    },
+    {
+      "L": 4,
+      "V": 32,
+      "dimensions": {
+        "singles": 1024,
+        "doubles": 246016,
+        "total": 247040
+      },
+      "coefficient_program": "p_x=1/4+bit_reverse_w((5*x+3) mod V)/(2V), w=log2 V",
+      "parameters": {
+        "g": 0.01,
+        "E0": 2.0,
+        "hopping": 0.02,
+        "max_graph_degree": 5
+      },
+      "certificates": {
+        "Delta_uniform": 0.8672180500069121,
+        "Gamma_uniform": 0.9327819499930879,
+        "q_uniform": 0.566390974996544,
+        "q_finite_absolute_rows": 0.12580040085788172,
+        "B0_squared": 0.0004934802200544679,
+        "BD_squared_actual": 2.4903993184784163e-06
+      },
+      "reference": {
+        "minus_energy_per_cell": 2.4825648346891497e-06,
+        "CG_linear_scalar": 2.4825648346891493e-06,
+        "CG_iterations": 9,
+        "residual_l2": 8.922134198414817e-16,
+        "variational_residual_error_bound": 2.868528806491082e-32
+      },
+      "mp2": {
+        "minus_energy_per_cell": 2.4903993184784163e-06,
+        "absolute_bias_vs_SD": 7.834483789266565e-09,
+        "relative_bias_vs_SD": 0.0031558022895492865,
+        "fft_vs_direct_contraction_error": 0.0,
+        "anchor_estimator_variance": 4.9424947291153217e-14,
+        "homogeneous_control_variance": 4.942494729115322e-14,
+        "pair_importance_estimator_mean": 2.4903993184784163e-06,
+        "pair_importance_variance": 8.994187123436466e-14,
+        "known_control_mean": 2.488945913916502e-06,
+        "centered_pair_variance": 2.8643323007069447e-16,
+        "pair_variance_reduction_factor": 314.00641333467536,
+        "note": "The exact same MP2 number is obtained deterministically by FFT. Anchor variance does not imply that sampling is the best comparator."
+      },
+      "neumann": [
+        {
+          "degree": 0,
+          "scalar": 2.4903993184784163e-06,
+          "absolute_error_vs_CG": 7.834483789266565e-09,
+          "uniform_bias_certificate": 3.2530220008969518e-06,
+          "finite_absolute_row_bias_certificate": 3.5837723200539727e-07,
+          "trial_variational_scalar": 2.480994460736713e-06,
+          "trial_variational_error_vs_CG": 1.5703739524365724e-09,
+          "trial_variational_residual_certificate": 7.303849081075791e-09
+        },
+        {
+          "degree": 1,
+          "scalar": 2.480994460736713e-06,
+          "absolute_error_vs_CG": 1.5703739524365724e-09,
+          "uniform_bias_certificate": 1.8424823027732328e-06,
+          "finite_absolute_row_bias_certificate": 4.508399944461705e-08,
+          "trial_variational_scalar": 2.4825620265171325e-06,
+          "trial_variational_error_vs_CG": 2.8081720171666013e-12,
+          "trial_variational_residual_certificate": 1.3120277575767747e-11
+        },
+        {
+          "degree": 2,
+          "scalar": 2.4825800347810486e-06,
+          "absolute_error_vs_CG": 1.5200091898920375e-11,
+          "uniform_bias_certificate": 1.043565347881609e-06,
+          "finite_absolute_row_bias_certificate": 5.671585202409342e-09,
+          "trial_variational_scalar": 2.4825648269132487e-06,
+          "trial_variational_error_vs_CG": 7.775900945681353e-15,
+          "trial_variational_residual_certificate": 3.639388197930058e-14
+        },
+        {
+          "degree": 3,
+          "scalar": 2.4825620265171325e-06,
+          "absolute_error_vs_CG": 2.8081720171666013e-12,
+          "uniform_bias_certificate": 5.910659948592723e-07,
+          "finite_absolute_row_bias_certificate": 7.134876919627254e-10,
+          "trial_variational_scalar": 2.4825648346612548e-06,
+          "trial_variational_error_vs_CG": 2.7894912535452246e-17,
+          "trial_variational_residual_certificate": 1.3048486377501985e-16
+        },
+        {
+          "degree": 4,
+          "scalar": 2.48256487677659e-06,
+          "absolute_error_vs_CG": 4.208744042229098e-14,
+          "uniform_bias_certificate": 3.347744451156454e-07,
+          "finite_absolute_row_bias_certificate": 8.975703765607568e-11,
+          "trial_variational_scalar": 2.4825648346890468e-06,
+          "trial_variational_error_vs_CG": 1.0291450309139749e-19,
+          "trial_variational_residual_certificate": 5.562810452290452e-19
+        }
+      ],
+      "seconds": {
+        "input_and_operator_setup": 0.13242475199967885,
+        "primitive_Green_FFT_only": 5.2907999815943185e-05,
+        "one_structural_SD_matvec": 0.005729240000619029,
+        "preconditioned_CG": 0.07122758600053203,
+        "MP2_scalar_FFT_after_input_setup": 0.00031931299963616766,
+        "Neumann_sum": 0.0668419140001788
+      },
+      "retained_operator_data_bytes": 10846228,
+      "validation_scope": "Same finite effective model in double precision; residual arithmetic itself is not interval certified. No material, FT timing, or asymptotic advantage claim."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+# Quantum Local Correlation Energy
+
+This repository studies the complete cost of estimating a linearized coupled-cluster singles-and-doubles (LCCSD) correlation energy density. It gives an explicit quantum compiler for a spatially nonuniform discrete-Poisson electronic model, then tests the same scalar task against a strong classical calculation.
+
+**The supported result is a volume-independent normalization and preparation construction, with paid procedural input access and a certified inverse gap. The worked weak-coupling example is classically inexpensive; it does not demonstrate practical quantum advantage.**
+
+## Scientific question
+
+Can locality and neutral transition densities remove a size-dependent compilation bottleneck without hiding the cost in data loading, state preparation, inverse conditioning or output?
+
+The target is one scalar,
+
+$$
+e=-\frac{1}{V}b^\dagger A^{-1}b,
+$$
+
+where $A$ is the full singles-and-doubles linearized coupled-cluster matrix and $V$ is the number of electronic cells. The model includes full periodic lattice electrostatics, nonuniform orbitals and nonzero hopping. It does not restrict the SD vector to rigid local excitons.
+
+## What is established
+
+- Neutral exchange is encoded through a bounded discrete-gradient projector.
+- Charged direct potentials use explicitly prepared Green-half columns with a known constant envelope.
+- The single–double interface combines a bounded column norm with at most two predecessors per target.
+- The source and scalar readout retain their success projectors and do not require postselection.
+- Explicit weak-coupling inequalities certify an actual positive SD gap and a nonzero energy scale.
+- A rank-preconditioned Neumann implementation provides a finite inverse construction with a transparent precision and logical-resource ledger.
+
+These mechanisms make the repeated coherent computation depend polylogarithmically on volume when the input coefficients have short reversible programs and the physical parameters and accuracy are fixed. This input restriction is essential. Setup remains separately charged: independent coefficient tables, model construction, reference preparation from material data, and physical approximation error retain their own costs.
+
+The existing LCC framework, fixed-rank neutral-Coulomb ideas, block encodings, LCU, amplitude estimation and inverse approximation are credited in [related work](references/related-work.md). The contribution is the explicit construction and matched cost comparison for the stated model, without an absolute priority claim.
+
+## The classical countercheck
+
+The full SD dimension grows as $V^4$, but the requested scalar can be much easier. A local-pair trial and its complete residual can be evaluated in $O(V^2\log V)$ work and $O(V^2)$ storage. The residual includes both the rank-changing singles channel and charge-transfer doubles from hopping.
+
+For the worked input family, this calculation reaches the requested $5.6981\times10^{-9}$ energy-density tolerance at $V=256$ and $V=2048$, without allocating their billion- or trillion-entry SD vectors. The [comparison](science/classical-comparison.md) gives the exact variational identity, measured numerical results and their floating-point limitations. Large amplitude-vector dimension is therefore insufficient evidence of an advantage.
+
+## Read the account
+
+| Page | Purpose |
+|---|---|
+| [Overview and result](science/overview.md) | The complete proposition, its consequence and its limits |
+| [Model and scalar task](science/model-and-task.md) | Obtainable input, SD identity and finite-precision contract |
+| [Coulomb access](science/coulomb-access.md) | Neutral projector and controlled charged-column constructions |
+| [Singles–doubles compiler](science/singles-doubles-compiler.md) | Rank-preserving terms and the single–double interface |
+| [Gap and signal](science/gap-and-signal.md) | Positive inverse gap and nontrivial requested accuracy |
+| [Scalar estimation](science/scalar-estimation.md) | Source preparation, inverse approximation and readout |
+| [Resources and regimes](science/resources-and-regimes.md) | Full quantum cost, arithmetic and remaining feasibility gap |
+| [Classical comparison](science/classical-comparison.md) | Matched FFT, variational and structural-SD alternatives |
+| [Related work](references/related-work.md) | Attribution and the precise comparison boundary |
+| [Verification](verification/README.md) | Reproducible scripts, observed outputs and test scope |
+
+For machine-assisted reading, see [llms.txt](llms.txt).
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
+
+The repository uses the [MIT license](LICENSE).
