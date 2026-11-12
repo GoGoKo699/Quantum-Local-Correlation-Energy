@@ -4,9 +4,9 @@
 
 This repository specializes established quantum linear-algebra methods to the finite-model LCCSD energy density
 
-$$
+```math
 e=-\frac{b^\dagger A_{SD}^{-1}b}{V}.
-$$
+```
 
 Its result is a constructive compiler and a reproducible comparison for an explicit input family. It makes no absolute novelty claim and does not demonstrate quantum advantage. The structured [bibliography](bibliography.json) records the primary sources, versions, and access limits behind this account.
 
@@ -30,7 +30,7 @@ The motivating lead was [Algorithms and compilation](https://github.com/GoGoKo69
 | Reference distributions, comparisons, and row/column maps | Lemieux et al. [5], §§2–3, 5.3–5.7, Appendix A | Power-law preparation and access-dependent block normalizations are established methods. The repository supplies the concrete shell and incidence maps. |
 | Hierarchical kernel encodings | Nguyen, Kiani, and Lloyd [6] | Kernel structure can improve normalization without generic dense loading. A shell or hierarchical encoding alone is not a new mechanism. |
 
-The finite Neumann implementation uses the standard identity $(I-M)^{-1}=\sum_{k\ge0}M^k$ when $\|M\|<1$. Its application-specific work is to bound the physical contraction $q$, the potentially larger circuit normalization $\beta$, the source envelope, and all finite errors separately. It introduces no new inverse-series method.
+The finite Neumann implementation uses the standard identity $`(I-M)^{-1}=\sum_{k\ge0}M^k`$ when $`\|M\|<1`$. Its application-specific work is to bound the physical contraction $`q`$, the potentially larger circuit normalization $`\beta`$, the source envelope, and all finite errors separately. It introduces no new inverse-series method.
 
 Quantum preconditioning and Green-function computation also have direct precedent in Tong, An, Wiebe, and Lin [13]. The resource ledger's elementary arithmetic is based on conventional reversible addition [14], while optimized function-evaluation circuits [15] are a stronger compilation alternative. Rotation-synthesis algorithms such as Ross and Selinger [16] supply a future compilation route. Their existence does not turn the present analytic operation budgets into a synthesized T count or a hardware runtime.
 
@@ -38,26 +38,26 @@ Quantum preconditioning and Green-function computation also have direct preceden
 
 **Local correlation already exploits long-range cancellation.** Schwilk, Usvyat, and Werner [7] organize strong, close, weak, and distant pairs and improve pair approximations by combining slowly decaying residual contributions before truncation. Neutrality, pair domains, and distant-pair treatment must therefore be available to the classical comparison. Their use of “local coupled cluster” should not be confused with the different abbreviation “linearized coupled cluster.”
 
-**Naive tensor contractions are not the strongest exact baseline.** Mardirossian, McClain, and Chan [8] use alternative real-space, momentum-space, and time representations to reduce exact Gaussian-basis LCCD scaling to $O(N^5)$ without a locality approximation. This is a distinct model from the lattice fixture here, but it directly rules out treating a conventional dense contraction count as universally optimal.
+**Naive tensor contractions are not the strongest exact baseline.** Mardirossian, McClain, and Chan [8] use alternative real-space, momentum-space, and time representations to reduce exact Gaussian-basis LCCD scaling to $`O(N^5)`$ without a locality approximation. This is a distinct model from the lattice fixture here, but it directly rules out treating a conventional dense contraction count as universally optimal.
 
 **Periodic structure offers classical reductions.** Hansen, Aurbakken, and Pedersen [9] develop periodic local correlation with translation-symmetric tensors in block-Toeplitz form and controlled local domains. The same translation and convolution structure must be retained when comparing quantum and classical work. This repository's periodic support/FFT analysis and its inhomogeneous pair-matrix FFT implementation are explicit matched constructions, not claims that generic FMM or FFT eliminates every coupled-cluster amplitude dimension.
 
 **Modern PNO and related local methods are strong practical competitors.** Pham, Modrzejewski, Nagy, and Klimeš [10] compare local coupled-cluster approaches for molecular solids, including PNO, DLPNO, and LNO treatments and improved long-range approximations. Their molecular-solid calculations are evidence for the strength of practical classical methods, not an exact solver theorem for this repository's finite LCCSD model. The repository consequently tests the same scalar target directly rather than converting a nominal SD dimension into a runtime claim.
 
-For the present fixture, a local-pair trial permits evaluation of both the variational scalar and the **complete** SD residual, including single–double coupling and hopping outside the trial support. For a classical trial vector $t$ approximating $A^{-1}b$, define
+For the present fixture, a local-pair trial permits evaluation of both the variational scalar and the **complete** SD residual, including single–double coupling and hopping outside the trial support. For a classical trial vector $`t`$ approximating $`A^{-1}b`$, define
 
-$$
+```math
 \mathcal F(t)=\frac{2\operatorname{Re}(b^\dagger t)-t^\dagger At}{V},
 \qquad r=b-At.
-$$
+```
 
-With $A\succeq\Delta I$, the exact identity
+With $`A\succeq\Delta I`$, the exact identity
 
-$$
+```math
 0\le-e-\mathcal F(t)
 =\frac{r^\dagger A^{-1}r}{V}
 \le\frac{\|r\|^2}{V\Delta}
-$$
+```
 
 certifies the scalar without storing the full SD vector. The [matched comparison](../science/classical-comparison.md) obtains the required tolerance in the tested regime. Its algebraic certificate and floating-point numerical evaluation are distinguished explicitly. The repository therefore reports a compiler improvement together with an inexpensive classical solution at the stated tolerance; it supplies no supported quantum crossover in that regime.
 

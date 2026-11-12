@@ -14,60 +14,60 @@ The input is a finite model with paid coefficient programs. It is not an arbitra
 
 ## Proposition
 
-Let $L=2^n$, $V=L^3/2$, and let the orbitals, electrostatics and stationary reference satisfy [the model definition](model-and-task.md). Assume bounded local Fock degree and known coefficient bounds, with reversible input-program costs $C_p,C_f$.
+Let $`L=2^n`$, $`V=L^3/2`$, and let the orbitals, electrostatics and stationary reference satisfy [the model definition](model-and-task.md). Assume bounded local Fock degree and known coefficient bounds, with reversible input-program costs $`C_p,C_f`$.
 
 Then the following constructions hold.
 
 1. The SD commutator matrix is Hermitian:
 
-   $$
+   ```math
    A=Q_{SD}(H-E_{\mathrm{HF}})Q_{SD}.
-   $$
+   ```
 
 2. Neutral exchange admits normalization
 
-   $$
+   ```math
    \alpha_J=4\pi g\gamma_*^2.
-   $$
+   ```
 
-3. Charged pair potentials admit normalization $gZ$, where the explicit dyadic construction has $Z=7\pi(1-1/L)$. A padded circuit variant has the slightly larger constant $Z=8\pi$.
+3. Charged pair potentials admit normalization $`gZ`$, where the explicit dyadic construction has $`Z=7\pi(1-1/L)`$. A padded circuit variant has the slightly larger constant $`Z=8\pi`$.
 
 4. The single-to-double block admits normalization
 
-   $$
+   ```math
    \alpha_K=4g\gamma_*\sqrt{2\pi Z}.
-   $$
+   ```
 
    Its construction combines a bounded source-column norm with at most two predecessor singles per double.
 
 5. The complete matrix and source therefore admit
 
-   $$
+   ```math
    \alpha_A\le\alpha_F+6gZ+4\alpha_J+\alpha_K,
    \qquad
    B_0=\alpha_J/\sqrt2,\qquad
    \|b\|/\sqrt V\le B_0.
-   $$
+   ```
 
-6. With the certified positive gap $\Delta$ from [the gap proof](gap-and-signal.md), the scalar algorithm has leading cost
+6. With the certified positive gap $`\Delta`$ from [the gap proof](gap-and-signal.md), the scalar algorithm has leading cost
 
-   $$
+   ```math
    C_{\mathrm{setup}}+
    \widetilde O\left[
    \frac{B_0^2}{\Delta\epsilon}
    \left(C_B+\frac{\alpha_A}{\Delta}C_A\right)
    \right].
-   $$
+   ```
 
-   Here $C_A,C_B$ include input evaluation, Fourier transforms, local arithmetic, signs, masks, coherent success projections, controls and inverses. Confidence and numerical precision contribute logarithms. No amplitude-vector output cost is hidden.
+   Here $`C_A,C_B`$ include input evaluation, Fourier transforms, local arithmetic, signs, masks, coherent success projections, controls and inverses. Confidence and numerical precision contribute logarithms. No amplitude-vector output cost is hidden.
 
-At fixed physical parameters, fixed positive gap and fixed requested error, every displayed normalization is independent of volume. If $C_p,C_f$ are polynomial in $\log V$ and the bit precision, the complete coherent program has polylogarithmic volume dependence. Setup retains all costs of obtaining and validating those programs.
+At fixed physical parameters, fixed positive gap and fixed requested error, every displayed normalization is independent of volume. If $`C_p,C_f`$ are polynomial in $`\log V`$ and the bit precision, the complete coherent program has polylogarithmic volume dependence. Setup retains all costs of obtaining and validating those programs.
 
 The proof is distributed across [Coulomb access](coulomb-access.md), [the SD compiler](singles-doubles-compiler.md), [gap and signal](gap-and-signal.md), and [scalar estimation](scalar-estimation.md). The [resource account](resources-and-regimes.md) specializes the inverse to a finite rank-preconditioned Neumann series and charges its arithmetic.
 
 ## Why the construction changes the cost
 
-The primitive Coulomb convolution matrix has a norm proportional to $L^2$. Encoding that matrix before using transition-charge neutrality can inherit a size-dependent normalization. The neutral synthesis map instead factors as a discrete divergence, so the two gradients around the inverse Laplacian become an orthogonal projector.
+The primitive Coulomb convolution matrix has a norm proportional to $`L^2`$. Encoding that matrix before using transition-charge neutrality can inherit a size-dependent normalization. The neutral synthesis map instead factors as a discrete divergence, so the two gradients around the inverse Laplacian become an orthogonal projector.
 
 The charged direct interaction is a different operator: a diagonal potential on two retained position labels. Its bounded Green-column overlap does not claim a constant-normalized encoding of the full Coulomb convolution.
 
@@ -79,13 +79,13 @@ The neutral fixed-rank principle and generic block-encoding tools have prior ant
 
 ## A finite inverse implementation
 
-For constant on-site separation $E_0$, set $D=mE_0$ at excitation rank $m$. The preconditioned correction
+For constant on-site separation $`E_0`$, set $`D=mE_0`$ at excitation rank $`m`$. The preconditioned correction
 
-$$
+```math
 M=I-D^{-1/2}AD^{-1/2}
-$$
+```
 
-has a certified physical norm $q<1$ in the example. A separately computed circuit normalization $\beta<1$ makes the finite Neumann polynomial inexpensive to combine by LCU. The physical $q$ controls the truncation error; $\beta$ controls the coefficient sum. This distinction prevents the physical norm from being silently substituted for the actual encoding cost.
+has a certified physical norm $`q<1`$ in the example. A separately computed circuit normalization $`\beta<1`$ makes the finite Neumann polynomial inexpensive to combine by LCU. The physical $`q`$ controls the truncation error; $`\beta`$ controls the coefficient sum. This distinction prevents the physical norm from being silently substituted for the actual encoding cost.
 
 The circuit-oriented construction uses uniform-register comparisons for bounded amplitudes and a padded dyadic frequency envelope. The resulting resource figures are conservative analytical circuit budgets, with explicit missing hardware assumptions. They are not measurements of a compiled fault-tolerant implementation.
 
@@ -93,29 +93,29 @@ The circuit-oriented construction uses uniform-register comparisons for bounded 
 
 The same weak-coupling gap that makes the quantum inverse well behaved helps a classical variational estimate. Write
 
-$$
+```math
 F=-e=\frac1Vb^\dagger A^{-1}b.
-$$
+```
 
-For any classical trial vector $t$, put $r=b-At$ and
+For any classical trial vector $`t`$, put $`r=b-At`$ and
 
-$$
+```math
 \mathcal F(t)=\frac{2\operatorname{Re}b^\dagger t-t^\dagger At}{V}.
-$$
+```
 
 Completing the square gives
 
-$$
+```math
 0\le F-\mathcal F(t)
 =\frac{r^\dagger A^{-1}r}{V}
 \le\frac{\|r\|^2}{V\Delta}.
-$$
+```
 
-For the constant-on-site example, a diagonal-MP2 trial occupies only determinants with two local pairs. Its full residual nevertheless includes local doubles, singles from $K^\dagger$, and charge-transfer doubles from hopping. All these contributions can be computed from pair matrices and FFTs in $O(V^2\log V)$ work, without storing the unrestricted $O(V^4)$ vector.
+For the constant-on-site example, a diagonal-MP2 trial occupies only determinants with two local pairs. Its full residual nevertheless includes local doubles, singles from $`K^\dagger`$, and charge-transfer doubles from hopping. All these contributions can be computed from pair matrices and FFTs in $`O(V^2\log V)`$ work, without storing the unrestricted $`O(V^4)`$ vector.
 
-The [implemented comparison](classical-comparison.md) reaches the requested nonzero energy tolerance for $V=256$ and $V=2048$. The exact residual identity supplies the mathematical certificate; ordinary double precision supplies the reported evaluations, without a formal interval-rounding guarantee.
+The [implemented comparison](classical-comparison.md) reaches the requested nonzero energy tolerance for $`V=256`$ and $`V=2048`$. The exact residual identity supplies the mathematical certificate; ordinary double precision supplies the reported evaluations, without a formal interval-rounding guarantee.
 
-Even the diagonal-MP2 scalar alone has an exact $O(V\log V)$ FFT route for arbitrary nonuniform mixing coefficients. Comparing only with a full-vector solver or uncorrected Monte Carlo would therefore overstate the quantum opportunity.
+Even the diagonal-MP2 scalar alone has an exact $`O(V\log V)`$ FFT route for arbitrary nonuniform mixing coefficients. Comparing only with a full-vector solver or uncorrected Monte Carlo would therefore overstate the quantum opportunity.
 
 ## Scope of the result
 

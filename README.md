@@ -10,11 +10,11 @@ Can locality and neutral transition densities remove a size-dependent compilatio
 
 The target is one scalar,
 
-$$
+```math
 e=-\frac{1}{V}b^\dagger A^{-1}b,
-$$
+```
 
-where $A$ is the full singles-and-doubles linearized coupled-cluster matrix and $V$ is the number of electronic cells. The model includes full periodic lattice electrostatics, nonuniform orbitals and nonzero hopping. It does not restrict the SD vector to rigid local excitons.
+where $`A`$ is the full singles-and-doubles linearized coupled-cluster matrix and $`V`$ is the number of electronic cells. The model includes full periodic lattice electrostatics, nonuniform orbitals and nonzero hopping. It does not restrict the SD vector to rigid local excitons.
 
 ## What is established
 
@@ -31,9 +31,9 @@ The existing LCC framework, fixed-rank neutral-Coulomb ideas, block encodings, L
 
 ## The classical countercheck
 
-The full SD dimension grows as $V^4$, but the requested scalar can be much easier. A local-pair trial and its complete residual can be evaluated in $O(V^2\log V)$ work and $O(V^2)$ storage. The residual includes both the rank-changing singles channel and charge-transfer doubles from hopping.
+The full SD dimension grows as $`V^4`$, but the requested scalar can be much easier. A local-pair trial and its complete residual can be evaluated in $`O(V^2\log V)`$ work and $`O(V^2)`$ storage. The residual includes both the rank-changing singles channel and charge-transfer doubles from hopping.
 
-For the worked input family, this calculation reaches the requested $5.6981\times10^{-9}$ energy-density tolerance at $V=256$ and $V=2048$, without allocating their billion- or trillion-entry SD vectors. The [comparison](science/classical-comparison.md) gives the exact variational identity, measured numerical results and their floating-point limitations. Large amplitude-vector dimension is therefore insufficient evidence of an advantage.
+For the worked input family, this calculation reaches the requested $`5.6981\times10^{-9}`$ energy-density tolerance at $`V=256`$ and $`V=2048`$, without allocating their billion- or trillion-entry SD vectors. The [comparison](science/classical-comparison.md) gives the exact variational identity, measured numerical results and their floating-point limitations. Large amplitude-vector dimension is therefore insufficient evidence of an advantage.
 
 ## Read the account
 

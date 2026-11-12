@@ -8,11 +8,11 @@ Lin Lin, *Lecture Notes on Quantum Algorithms for Scientific Computation*, **arX
 
 The computational question is concrete: how much does allowing coupled electronic excitations lower the energy per cell in the supplied finite model? The project expresses that correction as
 
-$$
+```math
 e=-\frac{b^\dagger A^{-1}b}{V}.
-$$
+```
 
-Here $b$ couples the reference to double excitations, $A$ is the singles-and-doubles response matrix, and $V$ is the number of electronic cells. The output is one scalar with a requested additive error. [The model definition](../science/model-and-task.md) specifies the inputs, stationary reference, and distinction from exact material energies.
+Here $`b`$ couples the reference to double excitations, $`A`$ is the singles-and-doubles response matrix, and $`V`$ is the number of electronic cells. The output is one scalar with a requested additive error. [The model definition](../science/model-and-task.md) specifies the inputs, stationary reference, and distinction from exact material energies.
 
 The anchor supplies the quantum linear-algebra vocabulary. The project must still construct the particular matrix and source, control their errors, and compare complete ways of obtaining the same scalar. Its supported result is an explicit compiler for a restricted model family, together with a strong classical countercheck. It establishes no practical quantum crossover.
 
@@ -35,25 +35,25 @@ These are entry points for the [30 project milestones](milestones.md), not a req
 
 | Anchor convention | Project translation | Consequence |
 |---|---|---|
-| An $n$-qubit matrix acts on a space of dimension $2^n$. | $N=L^3$ counts primitive sites, $V=N/2$ counts cells, and the SD determinant space has another dimension. | A logarithmic number of address qubits does not make acquisition of arbitrary coefficient data inexpensive. |
-| A block encoding has a normalization $\alpha$ and an operator error. | $U_A$ encodes $A/\alpha_A$; $\alpha_J$, $gZ$, and $\alpha_K$ come from different constructions. | An upper bound on the physical norm need not be an achievable circuit normalization. |
-| The inverse construction uses a spectral cutoff for a scaled matrix. | The relevant cutoff is $\Delta/\alpha_A$ when $A\succeq\Delta I$. | A one-particle orbital separation is not by itself the required SD inverse gap. |
-| The linear-system right-hand side is often a normalized state. | The good branch here is $b/(\sqrt V B_0)$, with explicitly retained failure branches. | The algorithm need not know $\lVert b\rVert$ or postselect successful source preparation. |
-| Section 8.4 uses $\beta$ as a reciprocal-polynomial scaling factor. | This project's $\beta$ normalizes the preconditioned correction $M$. | These are different quantities. Here $q$ bounds $\lVert M\rVert$, while $\beta$ controls the implemented LCU coefficient sum. |
-| A linear solver may return a state proportional to $A^{-1}b$. | This task returns $e$ and a confidence statement. | Neither a full amplitude list nor a material-accuracy validation is included in that output. |
+| An $`n`$-qubit matrix acts on a space of dimension $`2^n`$. | $`N=L^3`$ counts primitive sites, $`V=N/2`$ counts cells, and the SD determinant space has another dimension. | A logarithmic number of address qubits does not make acquisition of arbitrary coefficient data inexpensive. |
+| A block encoding has a normalization $`\alpha`$ and an operator error. | $`U_A`$ encodes $`A/\alpha_A`$; $`\alpha_J`$, $`gZ`$, and $`\alpha_K`$ come from different constructions. | An upper bound on the physical norm need not be an achievable circuit normalization. |
+| The inverse construction uses a spectral cutoff for a scaled matrix. | The relevant cutoff is $`\Delta/\alpha_A`$ when $`A\succeq\Delta I`$. | A one-particle orbital separation is not by itself the required SD inverse gap. |
+| The linear-system right-hand side is often a normalized state. | The good branch here is $`b/(\sqrt V B_0)`$, with explicitly retained failure branches. | The algorithm need not know $`\lVert b\rVert`$ or postselect successful source preparation. |
+| Section 8.4 uses $`\beta`$ as a reciprocal-polynomial scaling factor. | This project's $`\beta`$ normalizes the preconditioned correction $`M`$. | These are different quantities. Here $`q`$ bounds $`\lVert M\rVert`$, while $`\beta`$ controls the implemented LCU coefficient sum. |
+| A linear solver may return a state proportional to $`A^{-1}b`$. | This task returns $`e`$ and a confidence statement. | Neither a full amplitude list nor a material-accuracy validation is included in that output. |
 
 ## A one-component view of the scalar mechanism
 
-Consider a single response coordinate with $A=a\ge\Delta>0$, real source $b$, a known positive envelope $B_0$, and $|b|\le\sqrt V B_0$. This is an algebraic illustration of the readout, not an electronic benchmark. A unitary source preparation has selected amplitude $b/(\sqrt V B_0)$; a selected inverse block has value $\Delta/(2a)$. Composing them with the required intermediate projectors gives the real scalar
+Consider a single response coordinate with $`A=a\ge\Delta>0`$, real source $`b`$, a known positive envelope $`B_0`$, and $`|b|\le\sqrt V B_0`$. This is an algebraic illustration of the readout, not an electronic benchmark. A unitary source preparation has selected amplitude $`b/(\sqrt V B_0)`$; a selected inverse block has value $`\Delta/(2a)`$. Composing them with the required intermediate projectors gives the real scalar
 
-$$
+```math
 s=\frac{b^2}{VB_0^2}\frac{\Delta}{2a}
   =-\frac{\Delta e}{2B_0^2}.
-$$
+```
 
-A Hadamard test of the resulting unitary embedding has probability $(1+s)/2$ for its chosen outcome. Estimating that probability recovers $s$, then $e=-2B_0^2s/\Delta$. The measured information is sufficient for the requested energy; there is no need to extract the response amplitude separately. The construction remains meaningful at $b=0$ because it never divides by the source norm.
+A Hadamard test of the resulting unitary embedding has probability $`(1+s)/2`$ for its chosen outcome. Estimating that probability recovers $`s`$, then $`e=-2B_0^2s/\Delta`$. The measured information is sufficient for the requested energy; there is no need to extract the response amplitude separately. The construction remains meaningful at $`b=0`$ because it never divides by the source norm.
 
-Every repetition still uses source preparation, inverse preparation, the inverse block, controls, and coherent success selection. Removing a success projector can change the encoded operator: an unqualified $U^\dagger U$ is the identity, not the desired Gram product. The full implementation and its cost are in [scalar estimation](../science/scalar-estimation.md).
+Every repetition still uses source preparation, inverse preparation, the inverse block, controls, and coherent success selection. Removing a success projector can change the encoded operator: an unqualified $`U^\dagger U`$ is the identity, not the desired Gram product. The full implementation and its cost are in [scalar estimation](../science/scalar-estimation.md).
 
 ## The steps supplied by this project
 
@@ -65,7 +65,7 @@ Every repetition still uses source preparation, inverse preparation, the inverse
 
 **Two separate spectral certificates.** The [gap and signal analysis](../science/gap-and-signal.md) supplies a sufficient positive SD gap and, for a narrower example family, a lower bound on the energy signal. The first makes inversion stable; the second ensures the chosen absolute-error target cannot be met by reporting zero. Neither certificate establishes useful material accuracy.
 
-**A finite implementation with paid inputs.** The [resource account](../science/resources-and-regimes.md) replaces an abstract inverse in the worked regime with rank preconditioning and a Neumann polynomial of degree 11. Both $q<1$ and $\beta<1$ are checked separately. Reversible coefficient programs, amplitude comparisons, Fourier operations, projections, precision and confidence enter the budget. The reported gate figures are conservative analytical construction budgets; they are not a compiled fault-tolerant netlist or measured runtime.
+**A finite implementation with paid inputs.** The [resource account](../science/resources-and-regimes.md) replaces an abstract inverse in the worked regime with rank preconditioning and a Neumann polynomial of degree 11. Both $`q<1`$ and $`\beta<1`$ are checked separately. Reversible coefficient programs, amplitude comparisons, Fourier operations, projections, precision and confidence enter the budget. The reported gate figures are conservative analytical construction budgets; they are not a compiled fault-tolerant netlist or measured runtime.
 
 **A matched classical scalar comparison.** The [classical calculation](../science/classical-comparison.md) uses a local-pair trial and a full residual certificate, including singles and charge-transfer doubles. It meets the stated error tolerance on the published examples without storing the unrestricted SD vector. The physical gap helps this certificate too. Pair FFTs, locality, and the short coefficient program must therefore be considered before interpreting favorable quantum volume scaling as an advantage. The reported floating-point residual evaluation does not provide a formal interval-rounding guarantee.
 
