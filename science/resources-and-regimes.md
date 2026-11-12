@@ -49,7 +49,7 @@ The priced instance uses exactly the same input program as the classical
 benchmark:
 
 ```math
-p_x=\frac14+\frac{\operatorname{bitreverse}_{w}((5x+3)\bmod V)}{2V},
+p_x=\frac14+\frac{\mathrm{bitreverse}_{w}((5x+3)\bmod V)}{2V},
 \quad w=\log_2V=3n-1,
 ```
 
@@ -72,7 +72,7 @@ The neutral map and Gram block are
 
 ```math
 W=C^{1/2}T
- =\sqrt{4\pi g}\,\operatorname{diag}
+ =\sqrt{4\pi g}\,\mathrm{diag}
  \frac{e^{-ik_z}-1}{\sqrt{\lambda(k)}}\,F S M_\gamma,
 \qquad J=W^\dagger W.
 ```
@@ -351,7 +351,7 @@ estimation. A Hadamard test of the complete projected scalar unitary has
 probability
 
 ```math
-a_H=\frac{1+\operatorname{Re}\langle\widetilde B|
+a_H=\frac{1+\mathrm{Re}\langle\widetilde B|
              \widetilde F_p/L_p|\widetilde B\rangle}{2}.
 ```
 

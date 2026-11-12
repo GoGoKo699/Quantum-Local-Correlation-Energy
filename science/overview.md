@@ -100,7 +100,7 @@ F=-e=\frac1Vb^\dagger A^{-1}b.
 For any classical trial vector $`t`$, put $`r=b-At`$ and
 
 ```math
-\mathcal F(t)=\frac{2\operatorname{Re}b^\dagger t-t^\dagger At}{V}.
+\mathcal F(t)=\frac{2\mathrm{Re}b^\dagger t-t^\dagger At}{V}.
 ```
 
 Completing the square gives

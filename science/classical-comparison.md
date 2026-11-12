@@ -46,11 +46,11 @@ The benchmark has a deterministic compact coefficient program. Index cells lexic
 
 ```math
 p_x=\frac14+
-\frac{\operatorname{rev}_w((5x+3)\bmod V)}{2V},
+\frac{\mathrm{rev}_w((5x+3)\bmod V)}{2V},
 \qquad \gamma_x=\sqrt{p_x(1-p_x)}.
 ```
 
-Here $`\operatorname{rev}_w`$ reverses the $`w`$ binary digits. The program contains a constant multiplication, addition, reduction, bit reversal, and scaling. It needs no independently supplied disorder table. Since 5 is odd and $`V`$ is a power of two, the coordinate values are a permutation of a dyadic grid in $`[1/4,3/4)`$. The coefficients are spatially nonuniform. This is an explicit algorithm test family, not a sampled material or an assumed hard pseudorandom function. At fixed coefficient precision, discarding sufficiently small output bits permits a smaller-period approximation; the full-precision permutation does not establish intrinsically hard disorder or asymptotic resistance to classical methods.
+Here $`\mathrm{rev}_w`$ reverses the $`w`$ binary digits. The program contains a constant multiplication, addition, reduction, bit reversal, and scaling. It needs no independently supplied disorder table. Since 5 is odd and $`V`$ is a power of two, the coordinate values are a permutation of a dyadic grid in $`[1/4,3/4)`$. The coefficients are spatially nonuniform. This is an explicit algorithm test family, not a sampled material or an assumed hard pseudorandom function. At fixed coefficient precision, discarding sufficiently small output bits permits a smaller-period approximation; the full-precision permutation does not establish intrinsically hard disorder or asymptotic resistance to classical methods.
 
 The remaining parameters are
 
@@ -76,7 +76,7 @@ For any trial amplitude $`t`$, define
 
 ```math
 \mathcal F(t)=\frac1V
-\left(2\operatorname{Re}b^\dagger t-t^\dagger At\right),
+\left(2\mathrm{Re}b^\dagger t-t^\dagger At\right),
 \qquad r=b-At.
 ```
 
@@ -232,7 +232,7 @@ Generate $`p_x`$, the finite Green kernel, and the unit-dipole kernel $`B(r)`$. 
 
 ```math
 JX=D_\gamma\,\mathcal F_c^{-1}
-\operatorname{diag}(\widehat B)\,
+\mathrm{diag}(\widehat B)\,
 \mathcal F_c\,D_\gamma X,
 ```
 

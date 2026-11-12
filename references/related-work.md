@@ -47,7 +47,7 @@ Quantum preconditioning and Green-function computation also have direct preceden
 For the present fixture, a local-pair trial permits evaluation of both the variational scalar and the **complete** SD residual, including single–double coupling and hopping outside the trial support. For a classical trial vector $`t`$ approximating $`A^{-1}b`$, define
 
 ```math
-\mathcal F(t)=\frac{2\operatorname{Re}(b^\dagger t)-t^\dagger At}{V},
+\mathcal F(t)=\frac{2\mathrm{Re}(b^\dagger t)-t^\dagger At}{V},
 \qquad r=b-At.
 ```
 

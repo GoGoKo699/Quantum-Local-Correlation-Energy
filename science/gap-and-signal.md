@@ -125,7 +125,7 @@ For the first bound, set $`a_0=1-1/\sqrt2`$. The displayed function decreases wi
 If a random variable occupies two intervals separated by $`d`$ with probabilities at least $`p_1,p_2`$, minimizing its squared deviations over a candidate mean gives variance at least $`p_1p_2d^2/(p_1+p_2)`$. Hence
 
 ```math
-\operatorname{Var}(j)\ge
+\mathrm{Var}(j)\ge
 \frac{(1/32)(1/4)}{1/32+1/4}\left(\frac15\right)^2
 =\frac1{900}.
 ```
@@ -134,7 +134,7 @@ Circulant Parseval and the constant diagonal give
 
 ```math
 \frac1V\sum_{x\ne y}|(K_0)_{xy}|^2
-=\operatorname{Var}(j).
+=\mathrm{Var}(j).
 ```
 
 Using the unordered source and $`\gamma_{\min}\le\gamma_x`$,

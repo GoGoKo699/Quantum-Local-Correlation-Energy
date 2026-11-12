@@ -37,7 +37,7 @@ The bound is deliberately conservative. Its role is a uniform certificate, not a
 
 ## Neutral exchange as a projector compression
 
-Let $`S`$ embed cell amplitudes into their disjoint internal $`z`$-edges and $`M_\gamma=\operatorname{diag}(\gamma_x)`$. Orient the gradient so the transition-charge synthesis map is $`R=D^\dagger S M_\gamma`$. The neutral Gram matrix is
+Let $`S`$ embed cell amplitudes into their disjoint internal $`z`$-edges and $`M_\gamma=\mathrm{diag}(\gamma_x)`$. Orient the gradient so the transition-charge synthesis map is $`R=D^\dagger S M_\gamma`$. The neutral Gram matrix is
 
 ```math
 J=R^\dagger C R
@@ -62,7 +62,7 @@ An equivalent rectangular factor is $`W=C^{1/2}R`$. With the cell-to-site embedd
 
 ```math
 W=\sqrt{4\pi g}\,
-\operatorname{diag}\!\left(
+\mathrm{diag}\!\left(
 \frac{e^{-ik_z}-1}{\sqrt{\lambda(k)}}\right)
 \mathcal F S_0 M_\gamma.
 ```
