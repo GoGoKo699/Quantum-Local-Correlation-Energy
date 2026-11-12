@@ -15,6 +15,11 @@
 - [Related work](references/related-work.md): inherited methods, closest work and comparison limits.
 - [Verification](verification/README.md): scripts, dependencies, outputs and validation scope.
 
+## Learning route
+
+- [Source-to-project bridge](learning/source-bridge.md): the single educational anchor, Lin Lin's arXiv:2201.08309v1, with verified sections, notation translation and project-supplied steps.
+- [30-milestone map](learning/milestones.md): 12 background/preliminaries milestones and 18 narrative/innovation milestones, progressing from local ingredients to the complete scalar-task comparison.
+
 ## Interpretation boundaries
 
 - No practical quantum advantage is demonstrated for the worked parameter family.

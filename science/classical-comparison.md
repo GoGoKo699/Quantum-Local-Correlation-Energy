@@ -22,7 +22,7 @@ $$
 
 the evaluated analytical error certificate is below tolerance for all three reported pair-trial instances:
 
-| Cells $V$ | Unrestricted SD dimension | Variational $-e$ | Uniform rank gap certificate | Paid finite gap certificate | Measured total time |
+| Cells $V$ | Unrestricted SD dimension | Variational $-e$ | Energy-error bound, uniform rank gap | Energy-error bound, paid finite gap | Measured total time |
 |---:|---:|---:|---:|---:|---:|
 | 32 | 247,040 | $2.4809945\times10^{-6}$ | $5.0285262\times10^{-9}$ | $4.3791036\times10^{-9}$ | 0.0006852 s |
 | 256 | 1,065,435,136 | $2.2380260\times10^{-6}$ | $4.9025878\times10^{-9}$ | $4.4724488\times10^{-9}$ | 0.0069128 s |

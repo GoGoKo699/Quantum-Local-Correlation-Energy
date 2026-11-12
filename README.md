@@ -2,7 +2,7 @@
 
 This repository studies the complete cost of estimating a linearized coupled-cluster singles-and-doubles (LCCSD) correlation energy density. It gives an explicit quantum compiler for a spatially nonuniform discrete-Poisson electronic model, then tests the same scalar task against a strong classical calculation.
 
-**The supported result is a volume-independent normalization and preparation construction, with paid procedural input access and a certified inverse gap. The worked weak-coupling example is classically inexpensive; it does not demonstrate practical quantum advantage.**
+**The supported result is volume-independent operator and source normalizations with an explicit preparation construction, paid procedural input access and a certified inverse gap. The worked weak-coupling example is classically inexpensive; it does not demonstrate practical quantum advantage.**
 
 ## Scientific question
 
@@ -51,6 +51,12 @@ For the worked input family, this calculation reaches the requested $5.6981\time
 | [Verification](verification/README.md) | Reproducible scripts, observed outputs and test scope |
 
 For machine-assisted reading, see [llms.txt](llms.txt).
+
+## Learning route
+
+The educational anchor is Lin Lin's [*Lecture Notes on Quantum Algorithms for Scientific Computation*, arXiv:2201.08309v1](https://arxiv.org/abs/2201.08309v1), submitted on 20 January 2022. Start with the [source-to-project bridge](learning/source-bridge.md) for selected sections, notation and the steps supplied by this project. The [30-milestone map](learning/milestones.md) connects 12 background milestones to 18 milestones assembling the compiler, its full cost and the matched classical comparison.
+
+The route explains why encoding a matrix, preparing a source and estimating one energy density have different costs. It ends with the supported restricted-model result and the remaining gap to advantage.
 
 ## Purpose and contact
 

@@ -430,8 +430,7 @@ than specialized arithmetic such as
 [Häner, Roetteler and Svore](https://arxiv.org/abs/1805.12445).
 
 The uniform word width is
-(w_{
-m arith}=f+2b+6n+16); it covers the exact squared comparisons, including
+$w_{\mathrm{arith}}=f+2b+6n+16$; it covers the exact squared comparisons, including
 the $3n$-bit input field. The program exposes every cosine, multiplier,
 comparator and LCU term used in its majorant. Shell routing is bounded by
 $16(n+1)$ word comparisons and $64(n+1)$ word operations. SD routing is
@@ -535,7 +534,7 @@ ledger does not silently subtract an exactly known MP2 scalar for free.
 
 The remaining gap to advantage is substantial: demonstrate a useful family
 and precision where comparable classical scalar/residual or local expansion
-methods become difficult, while preserving a small gap/normalization and
+methods become difficult, while preserving a certified positive gap and affordable encoding normalization and
 efficiently supplied coefficients; then compile the arithmetic, phases and
 fault-tolerant implementation. The present evidence supports a complete
 conditional compiler and a constructive inverse refinement, not a winning
