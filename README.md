@@ -2,7 +2,11 @@
 
 This repository studies the complete cost of estimating a linearized coupled-cluster singles-and-doubles (LCCSD) correlation energy density. It gives an explicit quantum compiler for a spatially nonuniform discrete-Poisson electronic model, then tests the same scalar task against a strong classical calculation.
 
-**The supported result is volume-independent operator and source normalizations with an explicit preparation construction, paid procedural input access and a certified inverse gap. The worked weak-coupling example is classically inexpensive; it does not demonstrate practical quantum advantage.**
+## Conclusion
+
+**The established result is an explicit LCCSD scalar-energy compiler whose operator and source normalizations are bounded independently of volume, with paid procedural input access, explicit preparation, a certified inverse gap and scalar readout costs. This work does not establish end-to-end quantum advantage.**
+
+At the tested parameters and accuracy, the matched classical calculation gives a full-target residual bound below tolerance when evaluated in double precision. This numerical evaluation is not an interval-arithmetic certificate, and it does not establish that every admissible model is classically easy.
 
 ## Scientific question
 
