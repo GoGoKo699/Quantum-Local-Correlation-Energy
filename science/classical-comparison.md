@@ -89,10 +89,11 @@ F-\mathcal F(t)
 
 Consequently
 
+**Equation (1).**
+
 ```math
 0\le F-\mathcal F(t)
 \le \frac{\|r\|^2}{V\Delta}.
-\tag{1}
 ```
 
 This is a standard positive-definite variational identity, not a new principle. Its useful application here is that both the trial scalar and the **full residual norm** admit a much smaller representation than the unrestricted SD solution. For the negative correlation energy, (1) gives the interval
@@ -113,22 +114,24 @@ B_{xy}=d_x^\dagger C d_y,
 \qquad J_{xy}=\gamma_x B_{xy}\gamma_y.
 ```
 
-The matrix $`B`$ is a cell-lattice convolution, while $`J`$ generally is not translation invariant. The source consists of doubles containing two local excitations, with source amplitude $`b_{xy}=J_{xy}`$ for $`x<y`$. The diagonal onsite denominator is $`2E_0`$ for these doubles. Set
+The matrix $`B`$ is a cell-lattice convolution, while $`J`$ generally is not translation invariant. The source consists of doubles containing two local excitations, with source amplitude $`b_{xy}=J_{xy}`$ for $`x\lt y`$. The diagonal onsite denominator is $`2E_0`$ for these doubles. Set
+
+**Equation (2).**
 
 ```math
 T_{xy}=\frac{J_{xy}}{2E_0}\quad(x\ne y),
 \qquad T_{xx}=0.
-\tag{2}
 ```
 
 The physical trial amplitude has value $`T_{xy}`$ on the unordered local-pair determinant $`\{x,y\}`$ and zero elsewhere. It has no singles or charge-transfer doubles. Such outputs do nevertheless appear in its residual and must be included.
 
 Even with arbitrary $`\gamma_x`$, the diagonal-MP2 scalar alone is particularly cheap. With $`q_x=\gamma_x^2`$ and $`S_{xy}=B_{xy}^2`$ for $`x\ne y`$, $`S_{xx}=0`$,
 
+**Equation (3).**
+
 ```math
-F_0=\frac1V\sum_{x<y}\frac{J_{xy}^2}{2E_0}
+F_0=\frac1V\sum_{x\lt y}\frac{J_{xy}^2}{2E_0}
 =\frac{q^\mathsf T S q}{4E_0 V}.
-\tag{3}
 ```
 
 The squared kernel $`S`$ is still a convolution. One FFT convolution therefore computes this scalar in $`O(V\log V)`$ work and $`O(V)`$ storage after or together with the charged Green-kernel construction. Nonuniform orbitals do not remove this classical shortcut. This observation is why a comparison solely against Monte Carlo with raw variance would be weak.
@@ -161,16 +164,17 @@ where $`C_{00}`$ is the primitive on-site kernel and $`C_{01}`$ the kernel betwe
 
 Define the symmetric matrix, with its diagonal discarded,
 
+**Equation (4).**
+
 ```math
 \mathcal I=\mathcal D\odot T+JT+TJ.
-\tag{4}
 ```
 
 The residual separates into three orthogonal output classes.
 
 ### Two local excitation pairs
 
-Direct terms preserve the local-pair determinant, while neutral exchange transfers either local pair. Their amplitudes add before squaring. Since the diagonal onsite term cancels $`b`$, the residual for $`x<y`$ is
+Direct terms preserve the local-pair determinant, while neutral exchange transfers either local pair. Their amplitudes add before squaring. Since the diagonal onsite term cancels $`b`$, the residual for $`x\lt y`$ is
 
 ```math
 r^{\rm pair}_{xy}=-\mathcal I_{xy}.
@@ -182,10 +186,11 @@ Its norm contribution is $`\frac12\sum_{x\ne y}|\mathcal I_{xy}|^2`$.
 
 The adjoint $`K^\dagger`$ removes either local pair from the trial. Only a local single at $`x`$ survives, with
 
+**Equation (5).**
+
 ```math
 r^{\rm single}_x
 =-\kappa_x\sum_{y\ne x}\gamma_y B_{yx}T_{yx}.
-\tag{5}
 ```
 
 All inserted-pair contributions to the same single are summed coherently. Omitting this channel would give an incorrect certificate even though its numerical norm is small in the reported regime.
@@ -196,9 +201,10 @@ A charged target consists of one local pair at $`y`$ and a separated electron at
 
 There are two histories: move the electron from a trial pair at $`i`$, or move the hole from a trial pair at $`a`$. The complete amplitude, up to one canonical determinant sign, is
 
+**Equation (6).**
+
 ```math
 f^v_{ai}T_{iy}-f^o_{ai}T_{ay}.
-\tag{6}
 ```
 
 These histories are added before squaring. For the benchmark hoppings the amplitude is $`-h(T_{iy}+T_{ay})`$, $`h=0.02`$. Pauli-forbidden $`y=a,i`$ are removed explicitly.
@@ -207,21 +213,24 @@ These histories are added before squaring. For the benchmark hoppings the amplit
 
 The normal-ordered SD decomposition has no other route from the trial: direct and exchange terms give (4), $`K^\dagger`$ gives (5), and local Fock hopping gives (6). Terms changing excitation rank by two leave the SD space. The three output classes are orthogonal. Hence
 
+**Equation (7).**
+
 ```math
-\|r\|^2=
-\frac12\sum_{x\ne y}|\mathcal I_{xy}|^2
-+\sum_x|r^{\rm single}_x|^2
-+\sum_{a\ne i}\sum_{y\notin\{a,i\}}
+\begin{aligned}
+\|r\|^2&=\frac12\sum_{x\ne y}|\mathcal I_{xy}|^2\\
+&\quad+\sum_x|r^{\rm single}_x|^2\\
+&\quad+\sum_{a\ne i}\sum_{y\notin\{a,i\}}
 |f^v_{ai}T_{iy}-f^o_{ai}T_{ay}|^2.
-\tag{7}
+\end{aligned}
 ```
 
 The last sum is restricted to nonzero local hopping edges. The variational scalar is
 
+**Equation (8).**
+
 ```math
 \mathcal F(t)=F_0-
 \frac{1}{2V}\sum_{x\ne y}T_{xy}\mathcal I_{xy}.
-\tag{8}
 ```
 
 Equations (7) and (8) are the implemented comparison. They retain every cross-rank and charge-transfer effect needed to certify the full scalar.
@@ -255,14 +264,17 @@ the rank-dependent counts give
 \frac{6(t_o+t_v)+3g\bar G+2\alpha_J+C_K/\sqrt2}{E_0},
 ```
 
+**Equation (9).**
+
 ```math
-\bar G=3\pi+\frac{\pi^3}{24},\qquad
-\alpha_J=4\pi g\gamma_*^2,\qquad
-C_K=4g\gamma_*\sqrt{2\pi\bar G},\qquad \gamma_*=1/2.
-\tag{9}
+\begin{aligned}
+\bar G&=3\pi+\frac{\pi^3}{24},\qquad
+\alpha_J=4\pi g\gamma_*^2,\\
+C_K&=4g\gamma_*\sqrt{2\pi\bar G},\qquad \gamma_*=1/2.
+\end{aligned}
 ```
 
-Here $`t_o=t_v=h`$ bound the hopping coefficients, and degree six is a common bound for every reported volume. At excitation rank $`m`$, hopping has norm at most $`6m(t_o+t_v)`$ and its denominator is $`mE_0`$. The direct interaction has one primitive charge pair at $`m=1`$ and six at $`m=2`$, each bounded by $`g\bar G`$, so its normalized contribution is at most $`3g\bar G/E_0`$. At most $`m^2`$ exchange lifts contribute, giving at most $`2\alpha_J/E_0`$. The single–double block acquires the factor $`1/(\sqrt2 E_0)`$; its Hermitian off-diagonal dilation has norm $`C_K/(\sqrt2 E_0)`$. Adding these four bounds proves (9).
+Here $`t_o=t_v=h`$ bound the hopping coefficients, and degree six is a common bound for every reported volume. At excitation rank $`m`$, hopping has norm at most $`6m(t_o+t_v)`$ and its denominator is $`mE_0`$. The direct interaction has one primitive charge pair at $`m=1`$ and six at $`m=2`$, each bounded by $`g\bar G`$, so its normalized contribution is at most $`3g\bar G/E_0`$. At most $`m^2`$ exchange lifts contribute, giving at most $`2\alpha_J/E_0`$. The single–double block acquires the factor $`1/(\sqrt2 E_0)`$; its Hermitian off-diagonal dilation has norm $`C_K/(\sqrt2 E_0)`$. Adding these four bounds proves the displayed norm bound on the preconditioned correction.
 
 Since $`q<1`$,
 
@@ -283,12 +295,13 @@ G_0(L)=\frac{4\pi}{L^3}\sum_{k\ne0}\lambda(k)^{-1}.
 
 The model proof bounds each direct potential by $`gG_0`$ and the rank-changing block using the same diagonal. Therefore the exact finite number can replace the looser all-volume upper bound in that proof:
 
+**Equation (10).**
+
 ```math
 \Gamma_L=g\left[
 6G_0(L)+4\pi+2\sqrt{2\pi G_0(L)}\right],
 \qquad
 \Delta_L=E_0-2dh-\Gamma_L.
-\tag{10}
 ```
 
 Here $`d`$ is the actual distinct-neighbor degree and $`\gamma_*\le1/2`$. At $`L=8,16`$, the evaluated gaps are 1.380764 and 1.367600. This improvement is paid by the already performed classical input preparation; an equally preprocessed quantum calculation may use it too. It is not a free extra promise supplied only to the classical algorithm.

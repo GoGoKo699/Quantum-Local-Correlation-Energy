@@ -18,48 +18,49 @@ Let $`L=2^n`$, $`V=L^3/2`$, and let the orbitals, electrostatics and stationary 
 
 Then the following constructions hold.
 
-1. The SD commutator matrix is Hermitian:
+**1.** The SD commutator matrix is Hermitian:
 
-   ```math
-   A=Q_{SD}(H-E_{\mathrm{HF}})Q_{SD}.
-   ```
+```math
+A=Q_{SD}(H-E_{\mathrm{HF}})Q_{SD}.
+```
 
-2. Neutral exchange admits normalization
+**2.** Neutral exchange admits normalization
 
-   ```math
-   \alpha_J=4\pi g\gamma_*^2.
-   ```
+```math
+\alpha_J=4\pi g\gamma_*^2.
+```
 
-3. Charged pair potentials admit normalization $`gZ`$, where the explicit dyadic construction has $`Z=7\pi(1-1/L)`$. A padded circuit variant has the slightly larger constant $`Z=8\pi`$.
+**3.** Charged pair potentials admit normalization $`gZ`$, where the explicit dyadic construction has $`Z=7\pi(1-1/L)`$. A padded circuit variant has the slightly larger constant $`Z=8\pi`$.
 
-4. The single-to-double block admits normalization
+**4.** The single-to-double block admits normalization
 
-   ```math
-   \alpha_K=4g\gamma_*\sqrt{2\pi Z}.
-   ```
+```math
+\alpha_K=4g\gamma_*\sqrt{2\pi Z}.
+```
 
-   Its construction combines a bounded source-column norm with at most two predecessor singles per double.
+Its construction combines a bounded source-column norm with at most two predecessor singles per double.
 
-5. The complete matrix and source therefore admit
+**5.** The complete matrix and source therefore admit
 
-   ```math
-   \alpha_A\le\alpha_F+6gZ+4\alpha_J+\alpha_K,
-   \qquad
-   B_0=\alpha_J/\sqrt2,\qquad
-   \|b\|/\sqrt V\le B_0.
-   ```
+```math
+\begin{aligned}
+\alpha_A&\le\alpha_F+6gZ+4\alpha_J+\alpha_K,\\
+B_0&=\alpha_J/\sqrt2,\\
+\|b\|/\sqrt V&\le B_0.
+\end{aligned}
+```
 
-6. With the certified positive gap $`\Delta`$ from [the gap proof](gap-and-signal.md), the scalar algorithm has leading cost
+**6.** With the certified positive gap $`\Delta`$ from [the gap proof](gap-and-signal.md), the scalar algorithm has leading cost
 
-   ```math
-   C_{\mathrm{setup}}+
-   \widetilde O\left[
-   \frac{B_0^2}{\Delta\epsilon}
-   \left(C_B+\frac{\alpha_A}{\Delta}C_A\right)
-   \right].
-   ```
+```math
+C_{\mathrm{setup}}+
+\widetilde O\left[
+\frac{B_0^2}{\Delta\epsilon}
+\left(C_B+\frac{\alpha_A}{\Delta}C_A\right)
+\right].
+```
 
-   Here $`C_A,C_B`$ include input evaluation, Fourier transforms, local arithmetic, signs, masks, coherent success projections, controls and inverses. Confidence and numerical precision contribute logarithms. No amplitude-vector output cost is hidden.
+Here $`C_A,C_B`$ include input evaluation, Fourier transforms, local arithmetic, signs, masks, coherent success projections, controls and inverses. Confidence and numerical precision contribute logarithms. No amplitude-vector output cost is hidden.
 
 At fixed physical parameters, fixed positive gap and fixed requested error, every displayed normalization is independent of volume. If $`C_p,C_f`$ are polynomial in $`\log V`$ and the bit precision, the complete coherent program has polylogarithmic volume dependence. Setup retains all costs of obtaining and validating those programs.
 

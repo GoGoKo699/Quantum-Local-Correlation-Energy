@@ -84,7 +84,7 @@ The physical contraction $`q`$ differs from the circuit normalization $`\beta`$ 
 Only doubles containing two local electron–hole pairs have nonzero source coefficients. With consistent determinant phases,
 
 ```math
-b_{xy}=J_{xy},\qquad x<y.
+b_{xy}=J_{xy},\qquad x\lt y.
 ```
 
 The bounded Gram encoding supplies the source envelope
